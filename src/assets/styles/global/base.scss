@@ -1,0 +1,19 @@
+@import "./variable.scss";
+
+body,html{
+  line-height: 1;
+  font-family: 'PingFang SC', 'STHeitiSC-Light', 'Helvetica-Light', arial, sans-serif, 'Droid Sans Fallback';
+  background: $color-background;
+  color: $color-text;
+  font-size:$browser-default-font-size;
+}
+
+.color-blue{
+  background-color:$color-blue
+}
+.color-red{
+  background-color:$color-red
+}
+.color-gray{
+  background-color:$color-gray
+}
