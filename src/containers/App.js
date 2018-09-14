@@ -7,8 +7,8 @@ import LeftMenu from 'container/home/left-menu';
 const App = () => {
  return (
   <LocaleProvider locale={CN}>
-    <LeftMenu/>
-    {/* <Routers/> */}
+   <LeftMenu/>
+   {/* <Routers/> */}
   </LocaleProvider>
  );
 };

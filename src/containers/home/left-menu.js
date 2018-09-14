@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { HOME } from 'constant/action-types'
 import OpdrException from 'component/home/opdr-exception'
 import BusinessGroup from 'component/home/business-group'
+import ChartMonitor from './chart-monitor'
 
 const site_btn =[
   {
@@ -19,16 +20,6 @@ const site_btn =[
     text:'可选座位'
   },
 ]
-
-const SiteBtn = (props) => {
-  const { bgClass,text } = props;
-  return (
-    <div>
-      <button className={ bgClass }></button>
-      <span>{ text }</span>
-    </div>
-  );
-}
 @connect(
   state => ({
     collapsed: state.home.collapsed
@@ -48,6 +39,15 @@ export default class LeftMenu extends React.Component {
   }
   render() {
     const { dispatch ,collapsed} = this.props
+    const SiteBtn = (props) => {
+      const { bgClass,text } = props;
+      return (
+        <div>
+          <button className={ bgClass }></button>
+          <span>{ text }</span>
+        </div>
+      );
+    }
     return (
       <div className='home_containers'>
         <div className='home_left'>
@@ -64,7 +64,9 @@ export default class LeftMenu extends React.Component {
           </div>
           <BusinessGroup/>
         </div>
-        <div className='home_right'>2222222</div>
+        <div className='home_right'>
+          <ChartMonitor/>
+        </div>
       </div>
     );
   }

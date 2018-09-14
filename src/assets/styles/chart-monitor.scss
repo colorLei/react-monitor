@@ -1,0 +1,46 @@
+@import "./global/variable.scss";
+
+.home_right{
+  .chart-line{
+    >div{
+      width: 50%;
+      border-right: 1px solid #fff
+    }
+    .area_chart{
+      .data_show{
+        display: flex;
+        .order_no{
+          width: 50%;
+          p:first-of-type{
+            font-size: 20px;
+          }
+          p:last-of-type{
+            font-size: 30px;
+            color: $color-yellow;
+            font-weight: bold;
+            margin: 20px 0 0 20px;
+          }
+        }
+        >ul{
+          width: 50%;
+          li{
+            text-align: center;
+            display: flex;
+            line-height: 20px;
+            font-size: 14px;
+            label{
+              width: 100px;
+            }
+            span{
+              color: $color-font
+            }
+          }
+        }
+      }
+      #chart{
+        height: 300px;
+        color: #fff!important
+      }
+    }
+  }
+}
