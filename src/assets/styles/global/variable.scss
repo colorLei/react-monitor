@@ -35,5 +35,13 @@ $browser-default-font-size: 16px !default;
   align-items: center;
 }
 
+@mixin span_data_format{
+  color: $color-font;
+  font-weight: bold;
+  cursor: pointer;
+  &:hover{
+    color: $color-yellow
+  }
+}
 
 

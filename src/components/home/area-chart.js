@@ -7,16 +7,13 @@ const option = {
   textStyle: {
       color: '#fff'
   },
-  lineStyle: {
-    color: 'red'
-},
   xAxis: {
       type: 'category',
       boundaryGap: false,
-      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat','xxx'],
+      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat','xxx','Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat','xxx'],
       axisLine: {
         lineStyle: {
-            color:'#CCC'
+            color:'#868686'
         }
       },
       axisLabel:{
@@ -27,12 +24,12 @@ const option = {
       type: 'value',
       axisLine: {
         lineStyle: {
-            color:'#CCC'
+            color:'#868686'
         }
     },
   },
   series: [{
-      data: [820, 932, 901, 934, 1290, 1330, 1320],
+      data: [820, 932, 901, 934, 7000, 1330, 1320,820, 932, 901, 934, 1290, 1330, 1320],
       type: 'line',
       areaStyle: {}
   }]
@@ -44,11 +41,13 @@ export default class AreaChart extends Component{
   }
 
   componentDidMount(){
-    const myChart = echarts.init(document.getElementById('chart'));
+    const { id } = this.props;
+    const myChart = echarts.init(document.getElementById(id));
     console.log(myChart)
     myChart.setOption(option)
   }
   render(){
+    const { id } = this.props;
     return (
       <div className='area_chart'>
         <div className='data_show'>
@@ -75,7 +74,7 @@ export default class AreaChart extends Component{
             </li>
           </ul>
         </div>
-        <div id='chart'></div>
+        <div className='charts'  id={id}></div>
       </div>
     );
   }

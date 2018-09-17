@@ -1,6 +1,8 @@
 import React ,{ Fragment } from 'react';
 import { connect } from 'react-redux'
 import AreaChart from 'component/home/area-chart'
+import BarChart from 'component/home/bar-chart'
+import PieChart from 'component/home/pie-chart'
 
 @connect(
   state => ({
@@ -14,13 +16,19 @@ export default class ChartMonitor extends React.Component {
     return (
       <Fragment>
         <div className='chart-line'>
-            <AreaChart/>
-            {/* <AreaChart id='chart2'/>
-            <AreaChart id='chart3'/>
-            <AreaChart id='chart4'/> */}
+            <div className='left-line'>
+              <AreaChart id='chart1'/>
+              <AreaChart id='chart2'/>
+            </div>
+            <div className='right-line'>
+              <BarChart id='chart3'/>
+              <BarChart id='chart4'/>
+            </div>
         </div>
         <div className='chart-round'>
-              3333
+          <PieChart id='chart5'/>
+          <PieChart id='chart6'/>
+          <PieChart id='chart7'/>
         </div>
       </Fragment>
     );

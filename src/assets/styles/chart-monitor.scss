@@ -1,45 +1,115 @@
 @import "./global/variable.scss";
 
-.home_right{
-  .chart-line{
-    >div{
-      width: 50%;
-      border-right: 1px solid #fff
+.home_right {
+  .chart-line {
+    display: flex;
+    flex-wrap: wrap;
+
+    .left-line {
+      width: 45%
     }
-    .area_chart{
-      .data_show{
+
+    .right-line {
+      width: 55%
+    }
+
+    .charts {
+      height: 250px;
+      color: #fff !important
+    }
+
+    .bar_chart,
+    .area_chart {
+      border-right: 1px solid #fff;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+
+    .area_chart {
+      .data_show {
         display: flex;
-        .order_no{
+
+        .order_no {
           width: 50%;
-          p:first-of-type{
+
+          p:first-of-type {
             font-size: 20px;
           }
-          p:last-of-type{
+
+          p:last-of-type {
             font-size: 30px;
-            color: $color-yellow;
+            color: $color-font;
             font-weight: bold;
             margin: 20px 0 0 20px;
+            cursor: pointer;
+            &:hover{
+              color: $color-yellow
+            }
           }
         }
-        >ul{
+
+        >ul {
           width: 50%;
-          li{
+
+          li {
             text-align: center;
             display: flex;
             line-height: 20px;
             font-size: 14px;
-            label{
+
+            label {
               width: 100px;
             }
-            span{
-              color: $color-font
+
+            span {
+              @include span_data_format;
             }
           }
         }
       }
-      #chart{
-        height: 300px;
-        color: #fff!important
+    }
+
+    .bar_chart {
+      >ul {
+        padding: 0 10%;
+        display: flex;
+        flex-wrap: wrap;
+
+        li {
+          width: 50%;
+          display: flex;
+          margin-bottom: 5px;
+
+          label {
+            width: 120px;
+            font-size: 18px;
+          }
+
+          span {
+            @include span_data_format;
+          }
+        }
+      }
+    }
+  }
+  .chart-round {
+    display: flex;
+    .pie_chart {
+      width: 33%;
+      .pie_data {
+        display: flex;
+        font-size: 18px;
+        label {
+          width: 120px
+        }
+
+        span {
+          @include span_data_format;
+        }
+      }
+
+      .pie_charts {
+        height: 250px;
       }
     }
   }
