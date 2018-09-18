@@ -1,0 +1,141 @@
+@import "./global/variable.scss";
+
+.detail_top{
+  margin-top: 20px;
+  border-top: 1px solid #FFF;
+  padding: 10px 25px;
+  display: flex;
+  justify-content:space-between;
+  .title{
+    font-size: 19px;
+    label{
+      font-weight:bold
+    }
+    span{
+      font-weight: bold;
+      color: #FFF
+    }
+  }
+}
+
+.select_group{
+  display: flex;
+  label{
+    font-size: 19px;
+    font-weight: bold;
+    line-height: 30px;
+    margin-right: 20
+  }
+  ul{
+    display: flex;
+    li{
+      width: 68px;
+      height: 30px;
+      background-color: $color-gray;
+      color: #333;
+      text-align: center;
+      line-height: 30px;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      &.active{
+        background-color: $color-blue;
+        color: #fff
+      }
+    }
+  }
+}
+
+.detail_bar_chart{
+  display: flex;
+  #bar_chart{
+    height: 400px;
+    width: 80%;
+  }
+  .bar_remark{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    li{
+      display: flex;
+      height: 25px;
+      label{
+        width: 30px;
+        height: 2px;
+        background-color: #ce4441;
+        margin-right: 5px;
+        margin-top: 11px;
+      }
+      span{
+        font-size: 14px;
+        width: 100px;
+        text-align: left;
+        line-height: 25px;
+      }
+      &:first-of-type label{
+        margin-top: 9px;
+        height: 5px;
+        background-color: #3d78c8
+      }
+      &:last-of-type label{
+        background-color: #8bba45
+      }
+
+    }
+  }
+}
+
+.detail_average{
+  display: flex;
+  border-top:1px solid #fff;
+  border-bottom:1px solid #fff;
+  padding: 25px 30px 60px;
+  li{
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h3{
+      color: #ccc;
+      line-height: 28px;
+      font-size: 15px;
+    }
+    p{
+      font-size: 14px;
+    }
+  }
+}
+
+.hour_data{
+  display: flex;
+  padding: 20px 30px;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  font-size: 15px;
+  .data_left,.data_right{
+    li{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      p{
+        margin-bottom: 5px;
+      }
+    }
+  }
+  .data_left{
+    width: 80px;
+  }
+  .data_right{
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    li{
+      width: 8%;
+      p.average_seven{
+        color: #0088cf
+      }
+    }
+  }
+}

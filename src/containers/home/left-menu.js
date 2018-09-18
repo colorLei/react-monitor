@@ -5,6 +5,7 @@ import { HOME } from 'constant/action-types'
 import OpdrException from 'component/home/opdr-exception'
 import BusinessGroup from 'component/home/business-group'
 import ChartMonitor from './chart-monitor'
+import DataDetail from '../detail'
 
 const site_btn =[
   {
@@ -65,7 +66,8 @@ export default class LeftMenu extends React.Component {
           <BusinessGroup/>
         </div>
         <div className='home_right'>
-          <ChartMonitor/>
+          {/* <ChartMonitor/> */}
+          <DataDetail/>
         </div>
       </div>
     );
