@@ -24,3 +24,33 @@
     }
   }
 }
+
+.time_interval{
+  display: flex;
+  padding: 20px 30px;
+  font-size: 15px;
+  .data_left,.data_right{
+    li{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      p{
+        margin-bottom: 5px;
+      }
+    }
+  }
+  .data_left{
+    width: 80px;
+  }
+  .data_right{
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    li{
+      width: 8%;
+      p.average_seven{
+        color: #0088cf
+      }
+    }
+  }
+}
