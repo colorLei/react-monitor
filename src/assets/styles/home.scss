@@ -25,8 +25,7 @@
         }
         color: #00ffff;
         &:hover{
-          cursor: pointer;
-          color:rgb(255,255,0);
+         @include hover_color;
         }
       }
       .now_time{
@@ -39,10 +38,14 @@
       margin: 10px auto;
       border-top: 1px solid #fff;
       border-bottom: 1px solid #fff;
-      p{
+      a{
         color: #ff9700;
         font-weight: bold;
         padding-top: 10px;
+        display: block;
+        &:hover{
+          @include hover_color;
+        }
       }
       ul{
         margin: 10px 0;
@@ -104,9 +107,9 @@
           height: 38px;
           border-radius: 5px;
           font-size: 13px;
-          cursor: pointer;
+          color: #fff;
           &:hover{
-            color:$color-yellow
+            @include hover_color;
           }
         }
         >div{

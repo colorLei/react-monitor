@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import echarts from "echarts/lib/echarts";
 import "echarts/lib/chart/line";
 
@@ -53,12 +54,13 @@ export default class AreaChart extends Component{
         <div className='data_show'>
           <div className='order_no'>
             <p>今日累计票量(国内)</p>
+            {/* <Link to='/detail'><p>1 0 0 , 8 6 1</p></Link> */}
             <p>1 0 0 , 8 6 1</p>
           </div>
           <ul>
             <li>
               <label>旗舰店</label>
-              <span>88,888</span>
+              <Link to='/detail'><span>88,888</span></Link>
             </li>
             <li>
               <label>xx</label>

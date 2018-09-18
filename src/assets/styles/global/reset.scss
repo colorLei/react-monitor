@@ -56,6 +56,9 @@ a{
   color: #7e8c8d;
   backface-visibility: hidden;
   text-decoration: none;
+  &:hover{
+    text-decoration: none;
+  }
 }
 
 li{

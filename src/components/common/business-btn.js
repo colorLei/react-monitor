@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-
+import  { Link }  from  'react-router-dom';
 
 const letters = ['A','B','J','K']
 
@@ -15,7 +15,9 @@ export default class BusinessBtn extends Component{
       return (
           <div className='btn_no'>
             {index === 0 ? <div className="left_no">{leader?1:groupIndexCopy+2}</div> : null }
-            <button className={exception?'color-red':'color-blue'}>{text}</button>
+            <Link to="/storage">
+              <button className={exception?'color-red':'color-blue'}>{text}</button>
+            </Link>
             {index === letters.length-1 ? <div className="right_no">{leader?1:groupIndexCopy+2}</div> : null }
           </div>
       );

@@ -49,4 +49,9 @@ $browser-default-font-size: 16px !default;
   border-bottom: 1px solid #fff;
 }
 
+@mixin hover_color{
+  cursor: pointer;
+  color:$color-yellow;
+}
+
 

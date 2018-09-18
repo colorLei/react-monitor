@@ -1,12 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux'
-// import { Menu, Icon, Button } from 'common/my_antd';
 import { HOME } from 'constant/action-types'
 import OpdrException from 'component/home/opdr-exception'
 import BusinessGroup from 'component/home/business-group'
-import ChartMonitor from './chart-monitor'
-import DataDetail from '../detail'
-import Storage from '../storage'
 
 const site_btn =[
   {
@@ -41,17 +37,7 @@ export default class LeftMenu extends React.Component {
   }
   render() {
     const { dispatch ,collapsed} = this.props
-    const SiteBtn = (props) => {
-      const { bgClass,text } = props;
-      return (
-        <div>
-          <button className={ bgClass }></button>
-          <span>{ text }</span>
-        </div>
-      );
-    }
     return (
-      <div className='home_containers'>
         <div className='home_left'>
           <div className='content_top'>
             <p className='title'>武汉运营中心数据监控大屏</p>
@@ -61,17 +47,17 @@ export default class LeftMenu extends React.Component {
           <OpdrException/>
           <div className='site_btn'>
           {
-            site_btn.map(({className,text}) => <SiteBtn bgClass={className} text={text} key={text}/>)
+            site_btn.map(({className,text}) => (
+              <div>
+                <button className={ className }></button>
+                <span>{ text }</span>
+              </div>
+            )
+          )
           }
           </div>
           <BusinessGroup/>
         </div>
-        <div className='home_right'>
-          {/* <ChartMonitor/> */}
-          {/* <DataDetail/> */}
-          <Storage/>
-        </div>
-      </div>
     );
   }
 }

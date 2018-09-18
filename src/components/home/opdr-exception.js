@@ -5,7 +5,7 @@ export default class OpdrException extends Component{
 
     return (
       <div className='opdr_containar'>
-        <p>OPDR数据异常 [3]</p>
+        <a href='http://workbench.corp.qunar.com/#/opdr/exceptionList' target='_blank'>OPDR数据异常 [3]</a>
         <ul>
           <li>国内改签——规定时间内改签完成率（代购不付费改签）——89.7%</li>
           <li>国内改签——规定时间内改签完成率（代购不付费改签）——89.7%</li>
