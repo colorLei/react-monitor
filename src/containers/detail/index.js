@@ -4,8 +4,7 @@ import { connect } from 'react-redux'
 import { HOME } from 'constant/action-types'
 import SelectGroup from 'component/detail/select-group'
 import Selects from 'component/common/selects'
-import Tendency from './tendency'
-import Creation from './creation'
+
 
 @connect(
   state => ({
@@ -15,7 +14,8 @@ import Creation from './creation'
 export default class LeftMenu extends React.Component {
 
   render() {
-
+    const { Routes,match } = this.props;
+    console.log( Routes )
     return (
       <Fragment>
         <div className='detail_top'>
@@ -25,8 +25,7 @@ export default class LeftMenu extends React.Component {
           </div>
           <SelectGroup/>
         </div>
-        {/* <Tendency/> */}
-        <Creation/>
+        <Routes/>
         <Selects/>
       </Fragment>
     );

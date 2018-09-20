@@ -1,7 +1,7 @@
-
+@import "./variable.scss";
 .select_type{
   padding: 30px 30px 40px;
-  border-bottom: 1px solid #fff;
+  @include border_top_bottom;
   display: flex;
   align-items: center;
   >label{

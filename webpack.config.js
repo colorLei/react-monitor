@@ -13,7 +13,7 @@ module.exports = merge(baseConfigs, {
     new ExtractTextPlugin("[name].[hash].css"),
     new HtmlWebpackPlugin({
       template: './index.html',
-    })
+    }),
   ],
   devServer: {
     stats: {

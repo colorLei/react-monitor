@@ -2,6 +2,7 @@ import React, {Fragment} from 'react';
 import {connect} from 'react-redux'
 import {HOME} from 'constant/action-types'
 import LineChart from 'component/storage/line-chart'
+import SelectGroup from 'component/detail/select-group'
 import {default as cls} from 'classnames'
 
 const chart_len = 4;
@@ -12,6 +13,10 @@ export default class StorageChart extends React.Component {
 
     render() {
         return (
+          <Fragment>
+            <div className='Storage_container'>
+                    <SelectGroup/>
+            </div>
             <ul className='Storage_charts'>
                 {chart_arr.map((v, i) => (
                     <li
@@ -23,6 +28,7 @@ export default class StorageChart extends React.Component {
                 ))
 }
             </ul>
+            </Fragment>
         );
     }
 }

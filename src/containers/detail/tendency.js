@@ -2,7 +2,6 @@ import React , { Fragment } from 'react';
 import { connect } from 'react-redux'
 // import { Menu, Icon, Button } from 'common/my_antd';
 import { HOME } from 'constant/action-types'
-import SelectGroup from 'component/detail/select-group'
 import BarChart from 'component/detail/bar-chart'
 
 @connect(

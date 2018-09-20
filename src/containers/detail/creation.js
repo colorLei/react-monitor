@@ -4,8 +4,6 @@ import { connect } from 'react-redux'
 import { HOME } from 'constant/action-types'
 import HourChart from 'component/detail/hour-chart'
 import TimeInterval from 'component/common/time-interval'
-
-
 @connect(
   state => ({
     collapsed: state.home.collapsed

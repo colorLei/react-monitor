@@ -3,7 +3,8 @@ const webpack = require('webpack'),
   ExtractTextPlugin = require('extract-text-webpack-plugin'),
   path = require('path'),
   { baseConfigs , happyPlugins } = require('./webpack.config.base'),
-  HtmlWebpackPlugin = require('html-webpack-plugin')
+  HtmlWebpackPlugin = require('html-webpack-plugin'),
+  BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = merge(baseConfigs, {
   output: {
@@ -23,6 +24,7 @@ module.exports = merge(baseConfigs, {
       },
       hash: true
     }),
+    new BundleAnalyzerPlugin()
   ],
   optimization: {
     runtimeChunk: {

@@ -15,7 +15,7 @@ export default class BusinessBtn extends Component{
       return (
           <div className='btn_no'>
             {index === 0 ? <div className="left_no">{leader?1:groupIndexCopy+2}</div> : null }
-            <Link to="/storage">
+            <Link to="/storage/chart">
               <button className={exception?'color-red':'color-blue'}>{text}</button>
             </Link>
             {index === letters.length-1 ? <div className="right_no">{leader?1:groupIndexCopy+2}</div> : null }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import echarts from "echarts/lib/echarts";
 import "echarts/lib/chart/bar";
-import "echarts/lib/component/markLine";
+import "echarts/lib/chart/line";
 import BarRemark from 'component/common/bar-remark'
 
 const option = {
