@@ -18,9 +18,7 @@ export default class StorageTarget extends React.Component {
         }
         return (
             <Fragment>
-                <div className='Storage_container'>
-                    <SelectGroup/>
-                </div>
+
                 <div className='storage_target'>
                     <div className='select'>
                         <label>库存指标型：</label>

@@ -2,9 +2,17 @@ import React, {Fragment} from 'react';
 import {connect} from 'react-redux'
 import {HOME} from 'constant/action-types'
 import SelectGroup from 'component/detail/select-group'
-// import StorageChart from './storage-chart'
-// import StorageTarget from './storage-target'
 
+const routes = [
+  {
+    name : '库存指标',
+    path : '/storage/chart',
+  },
+  {
+    name : '重点指标',
+    path : '/storage/target',
+  }
+]
 @connect(state => ({collapsed: state.home.collapsed}))
 export default class LeftMenu extends React.Component {
 
@@ -13,10 +21,8 @@ export default class LeftMenu extends React.Component {
         return (
             <Fragment>
                 <div className='Storage_container'>
-                    <SelectGroup/>
+                    <SelectGroup routes={routes}/>
                 </div>
-                {/* <StorageChart/> */}
-                {/* <StorageTarget/> */}
                 <Routes/>
             </Fragment>
         );

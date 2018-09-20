@@ -1,16 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
+import {NavLink} from 'react-router-dom';
 
-
-export default  (props) => {
-  const { bgClass,text } = props;
-  return (
-    <div className='select_group'>
-      <label>数据维度：</label>
-        <ul>
-          <li>历史趋势</li>
-          <li className='active'>小时创建</li>
-        </ul>
-    </div>
-  );
+export default(props) => {
+    const { routes } = props;
+    return (
+        <div className='select_group'>
+            <label>数据维度：</label>
+            <div>
+                {routes.map(({path, name}) => (
+                    <NavLink to={path} key={name} activeClassName="active">
+                        {name}
+                    </NavLink>
+                ))
 }
-
+            </div>
+        </div>
+    );
+}

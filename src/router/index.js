@@ -40,12 +40,12 @@ const root = [
         children: [
             {
                 path: '/chart',
-                component: _import_components('storage/storage-chart'),
+                component: _import_components('storage/chart'),
                 meta: {}
             }, {
                 path: '/target',
                 name: 'target',
-                component: _import_components('storage/storage-target'),
+                component: _import_components('storage/target'),
                 meta: {}
             }
         ]

@@ -1,8 +1,10 @@
 import React from 'react';
+import {NavLink} from 'react-router-dom';
 import { connect } from 'react-redux'
 import { HOME } from 'constant/action-types'
 import OpdrException from 'component/home/opdr-exception'
 import BusinessGroup from 'component/home/business-group'
+import NowTime from 'component/home/now-time'
 
 const site_btn =[
   {
@@ -40,9 +42,9 @@ export default class LeftMenu extends React.Component {
     return (
         <div className='home_left'>
           <div className='content_top'>
-            <p className='title'>武汉运营中心数据监控大屏</p>
-            <p className='now_time'>2018年08月08日 18:00:00</p>
-            <p>当前在班人力：400</p>
+            <NavLink to='/home' className='title'>武汉运营中心数据监控大屏</NavLink>
+            <NowTime/>
+            <p>当前在班人力：666</p>
           </div>
           <OpdrException/>
           <div className='site_btn'>
