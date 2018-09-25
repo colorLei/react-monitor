@@ -4,7 +4,7 @@ import { message } from 'antd';
 import xhr from 'common/api.js';
 
 
-function* base({ action, callback = ()=>{}, payload }) {
+function* base({ action, callback = ()=>{}, ...payload }) {
  try {
   const data = yield call(xhr,{url:action.API,...payload});
   yield put({ type: action.OK, payload: data });
@@ -16,5 +16,5 @@ function* base({ action, callback = ()=>{}, payload }) {
 }
 
 export function* watch_ajax() {
- yield takeLatest('SET_AJAX_REQUSET', base);
+ yield takeLatest('XHR_REQ', base);
 }

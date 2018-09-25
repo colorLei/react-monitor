@@ -5,14 +5,9 @@ import BarChart from 'component/home/bar-chart'
 import PieChart from 'component/home/pie-chart'
 
 @connect(
-  state => ({
-    collapsed: state.home.collapsed
-  }),
-  // dispatch => ({dispatch})
 )
 export default class ChartMonitor extends React.Component {
   render() {
-    const { dispatch ,collapsed} = this.props
     return (
       <Fragment>
         <div className='chart-line'>
