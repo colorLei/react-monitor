@@ -1,6 +1,5 @@
 import { call , put, takeLatest} from 'redux-saga/effects';
 import { message } from 'antd';
-// import { CHNAGE_QUMENU_COLLAPSED } from 'constant/action-types'
 import xhr from 'common/api.js';
 
 
