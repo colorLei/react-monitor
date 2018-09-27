@@ -1,33 +1,16 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import echarts from "echarts/lib/echarts";
 import "echarts/lib/chart/line";
+import { renderChart } from 'common/util'
 
 
 const option = {
-  textStyle: {
-      color: '#fff'
-  },
   xAxis: {
-      type: 'category',
       boundaryGap: false,
       data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat','xxx','Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat','xxx'],
-      axisLine: {
-        lineStyle: {
-            color:'#868686'
-        }
-      },
-      axisLabel:{
-        rotate:45
-      }
   },
   yAxis: {
-      type: 'value',
-      axisLine: {
-        lineStyle: {
-            color:'#868686'
-        }
-    },
+
   },
   series: [{
       data: [820, 932, 901, 934, 7000, 1330, 1320,820, 932, 901, 934, 1290, 1330, 1320],
@@ -43,9 +26,7 @@ export default class AreaChart extends Component{
 
   componentDidMount(){
     const { id } = this.props;
-    const myChart = echarts.init(document.getElementById(id));
-    console.log(myChart)
-    myChart.setOption(option)
+    renderChart(option,id,'line')
   }
   render(){
     const { id } = this.props;

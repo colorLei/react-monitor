@@ -21,11 +21,12 @@ export default class BusinessBtn extends Component{
           <div className='btn_no'>
             {index === 0 ? <div className="left_no">{leader?1:groupIndexCopy+2}</div> : null }
             {
-              leader? <NotLink {...props}/> :
+              /* leader? <NotLink {...props}/> :
               !text?<button className='color-gray'>{text}</button>:
               <Link to="/storage/chart">
                 <NotLink {...props}/>
-              </Link>
+              </Link> */
+              text?<NotLink {...props}/>:<button className='color-gray'>{text}</button>
             }
             {index === letters.length-1 ? <div className="right_no">{leader?1:groupIndexCopy+2}</div> : null }
           </div>
