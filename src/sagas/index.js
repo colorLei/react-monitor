@@ -1,7 +1,10 @@
 import { all } from 'redux-saga/effects';
-import { watch_ajax } from './common';
+import HOME from './home';
+import DETAIL from './detail';
+
 export default function* () {
  yield all([
-  watch_ajax()
+   ...HOME,
+   ...DETAIL
  ]);
 }

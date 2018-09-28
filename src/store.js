@@ -1,7 +1,9 @@
 
 import { createStore, combineReducers, compose, applyMiddleware } from 'redux'
 import createSagaMiddleware from 'redux-saga'
+import logger from 'redux-logger'
 import HOME from './reducers/home'
+import DETAIL from './reducers/detail'
 import sagas from './sagas'
 
 const sagaMiddleware = createSagaMiddleware()
@@ -9,7 +11,8 @@ const enhancer = (window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose)(applyM
 
 const store = createStore(
     combineReducers({
-      HOME
+      HOME,
+      DETAIL
     }),
     {},
     enhancer

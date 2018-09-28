@@ -20,15 +20,16 @@ const root = [
         meta: {},
         children: [
             {
+                path: '/creation',
+                name: 'creation',
+                component: _import_components('detail/creation'),
+                meta: {}
+            },
+            {
                 path: '/tendency',
                 redirectFrom: '/detail',
                 name: 'tendency',
                 component: _import_components('detail/tendency'),
-                meta: {}
-            }, {
-                path: '/creation',
-                name: 'creation',
-                component: _import_components('detail/creation'),
                 meta: {}
             }
         ]

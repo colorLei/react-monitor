@@ -1,6 +1,6 @@
-import { call , put, takeLatest} from 'redux-saga/effects';
+import { call , put, takeEvery} from 'redux-saga/effects';
 import { message } from 'antd';
-import xhr from 'common/api.js';
+import xhr from 'common/api';
 
 
 function* base({ action, callback = ()=>{}, ...payload }) {
@@ -15,5 +15,5 @@ function* base({ action, callback = ()=>{}, ...payload }) {
 }
 
 export function* watch_ajax() {
- yield takeLatest('XHR_REQ', base);
+ yield takeEvery('XHR_REQ', base);
 }

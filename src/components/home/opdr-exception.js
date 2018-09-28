@@ -15,8 +15,7 @@ export default class OpdrException extends Component {
     getExceptionList = _ => {
         const {dispatch} = this.props
         dispatch({
-            type: 'XHR_REQ',
-            action: HOME.GET_EXCEPTION_LIST,
+            type: HOME.GET_EXCEPTION_LIST.toString(),
             data: {
                 flag: 0
             },

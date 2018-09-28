@@ -1,257 +1,61 @@
-{
-  "ret": true,
-  "data":{
-    "line":[
+[
+  {
+    "ret": true,
+    "data":[
       {
         "name":"国内",
-        "accumuOrderNO":100861,
-        "type":[
-          {
-            "name":"旗舰店",
-            "accumuOrderNO":88888
-          },
-          {
-            "name":"代购",
-            "accumuOrderNO":88888
-          },
-          {
-            "name":"自营",
-            "accumuOrderNO":88888
-          },
-          {
-            "name":"OTA",
-            "accumuOrderNO":88888
-          }
-        ],
-        "data":[
-          {
-            "name":"0:00",
-            "value":820
-          },
-          {
-            "name":"1:00",
-            "value":825
-          },
-          {
-            "name":"3:00",
-            "value":840
-          },
-          {
-            "name":"4:00",
-            "value":860
-          },
-          {
-            "name":"5:00",
-            "value":820
-          }
-        ]
+        "code":1
       },
       {
         "name":"国际",
-        "accumuOrderNO":100861,
-        "type":[
-          {
-            "name":"旗舰店",
-            "accumuOrderNO":88888
-          },
-          {
-            "name":"代购",
-            "accumuOrderNO":88888
-          },
-          {
-            "name":"自营",
-            "accumuOrderNO":88888
-          },
-          {
-            "name":"OTA",
-            "accumuOrderNO":88888
-          }
-        ],
-        "data":[
-          {
-            "name":"0:00",
-            "value":820
-          },
-          {
-            "name":"1:00",
-            "value":825
-          },
-          {
-            "name":"3:00",
-            "value":840
-          },
-          {
-            "name":"4:00",
-            "value":860
-          },
-          {
-            "name":"5:00",
-            "value":820
-          }
-        ]
+        "code":2
+      },
+      {
+        "name":"宇宙",
+        "code":3
       }
-    ],
-    "bar":[
+    ]
+  },
+  {
+    "ret": true,
+    "data":[
       {
-        "name":["国内退票","国内改签"],
-        "type":[
-          {
-            "name":"国内订单总量",
-            "accumuOrderNO":20000
-          },
-          {
-            "name":"退改申请总量",
-            "accumuOrderNO":20000
-          },
-          {
-            "name":"改签申请总量",
-            "accumuOrderNO":2000
-          }
-        ],
-        "data":[
-          {
-            "name":"0:00",
-            "value1":820,
-            "value2":800
-          },
-          {
-            "name":"1:00",
-            "value":825,
-            "value2":800
-          },
-          {
-            "name":"3:00",
-            "value":840,
-            "value2":800
-          },
-          {
-            "name":"4:00",
-            "value":860,
-            "value2":800
-          },
-          {
-            "name":"5:00",
-            "value":820,
-            "value2":800
-          }
-        ]
+        "name":"票量",
+        "code":1
       },
       {
-        "name":["国际退票","国际改签"],
-        "type":[
-          {
-            "name":"国际订单总量",
-            "accumuOrderNO":20000
-          },
-          {
-            "name":"退改申请总量",
-            "accumuOrderNO":20000
-          },
-          {
-            "name":"国际航段量",
-            "accumuOrderNO":20000
-          },
-          {
-            "name":"改签申请总量",
-            "accumuOrderNO":2000
-          }
-        ],
-        "data":[
-          {
-            "name":"0:00",
-            "value1":820,
-            "value2":800
-          },
-          {
-            "name":"1:00",
-            "value":825,
-            "value2":800
-          },
-          {
-            "name":"3:00",
-            "value":840,
-            "value2":800
-          },
-          {
-            "name":"4:00",
-            "value":860,
-            "value2":800
-          },
-          {
-            "name":"5:00",
-            "value":820,
-            "value2":800
-          }
-        ]
+        "name":"退票",
+        "code":2
+      },
+      {
+        "name":"改签",
+        "code":3
       }
-    ],
-    "pie":[
+    ]
+  },
+  {
+    "ret": true,
+    "data":[
       {
-        "name":"工单创建总量",
-        "accumuOrderNO":20000,
-        "data":[
-          {
-            "name":"国际旗舰店",
-            "value":820
-          },
-          {
-            "name":"国内派单",
-            "value":825
-          },
-          {
-            "name":"国内旗舰店",
-            "value":840
-          },
-          {
-            "name":"国际派单",
-            "value":860
-          }
-        ]
+        "name":"全部",
+        "code":0
       },
       {
-        "name":"消息创建总量",
-        "accumuOrderNO":20000,
-        "data":[
-          {
-            "name":"国际旗舰店",
-            "value":820
-          },
-          {
-            "name":"国内派单",
-            "value":825
-          },
-          {
-            "name":"国内旗舰店",
-            "value":840
-          },
-          {
-            "name":"国际派单",
-            "value":860
-          }
-        ]
+        "name":"自营",
+        "code":1
       },
       {
-        "name":"众包创建总量",
-        "accumuOrderNO":20000,
-        "data":[
-          {
-            "name":"国际旗舰店",
-            "value":820
-          },
-          {
-            "name":"国内派单",
-            "value":825
-          },
-          {
-            "name":"国内旗舰店",
-            "value":840
-          },
-          {
-            "name":"国际派单",
-            "value":860
-          }
-        ]
+        "name":"旗舰店",
+        "code":2
+      },
+      {
+        "name":"代购",
+        "code":3
       }
     ]
   }
-}
+
+
+
+]
+

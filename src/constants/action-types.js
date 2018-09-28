@@ -1,5 +1,5 @@
 import actions from './path';
-export { APP, HOME } from './path';
+export { DETAIL, HOME } from './path';
 
 const obj = {};
 

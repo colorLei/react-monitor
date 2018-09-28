@@ -23,8 +23,7 @@ export default class ChartMonitor extends React.Component {
   getChartsList = _ => {
     const {dispatch} = this.props
     dispatch({
-        type: 'XHR_REQ',
-        action: HOME.GET_CHARTS_LIST
+      type: HOME.GET_CHARTS_LIST.toString()
     })
   }
   _Refresh = _ => {

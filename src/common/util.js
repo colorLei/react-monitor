@@ -31,7 +31,8 @@ export const renderChart = (dataSource = {}, htmlDom, type) => {
         yAxis = {},
         series,
         legend,
-        grid
+        grid,
+        color
     } = dataSource;
     if (myChart) {
         myChart.showLoading();
@@ -40,6 +41,7 @@ export const renderChart = (dataSource = {}, htmlDom, type) => {
             const options = type === 'pie'
                 ? dataSource
                 : {
+                    color,
                     textStyle: {
                         color: '#fff'
                     },
@@ -74,8 +76,8 @@ export const renderChart = (dataSource = {}, htmlDom, type) => {
                     },
                     series: series.map(iSeries => {
                         return {
-                            ...iSeries,
-                            type: type
+                          type: type,
+                          ...iSeries
                         }
                     })
                 }
