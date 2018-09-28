@@ -5,7 +5,7 @@ import xhr from 'common/api.js';
 import BusinessBtn from 'component/common/business-btn'
 
 const groupLen = 5;
-@connect(state => ({leaderAndGroupList: state.LEFT_MENU.leaderAndGroupList}))
+@connect(state => ({leaderAndGroupList: state.HOME.leaderAndGroupList}))
 export default class BusinessGroup extends Component{
   componentDidMount(){
     this.getLeaderAndGroup()

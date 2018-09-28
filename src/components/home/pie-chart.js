@@ -1,29 +1,7 @@
 import React, { Component } from 'react';
-import echarts from "echarts/lib/echarts";
 import "echarts/lib/chart/pie";
-import 'echarts/lib/component/tooltip';
-import 'echarts/lib/component/legend';
-
-
-const option = {
-  series: [
-      {
-          name:'访问来源',
-          type:'pie',
-          radius: ['50%', '70%'],
-          label:{
-            formatter:'{b}\n{c}'
-          },
-          data:[
-              {value:335, name:'直接访问'},
-              {value:310, name:'邮件营销'},
-              {value:234, name:'联盟广告'},
-              {value:135, name:'视频广告'},
-              {value:1548, name:'搜索引擎'}
-          ]
-      }
-  ]
-};
+import { renderChart, nfmt, deepCopyObject} from 'common/util'
+import { pieConf } from 'common/chartConf'
 
 export default class AreaChart extends Component{
   constructor(props) {
@@ -31,18 +9,21 @@ export default class AreaChart extends Component{
   }
 
   componentDidMount(){
-    const { id } = this.props;
-    const myChart = echarts.init(document.getElementById(id));
-    console.log(myChart)
-    myChart.setOption(option)
+    this._setChartOptions()
+  }
+  _setChartOptions = _ => {
+    const { id, data } = this.props;
+    const option = deepCopyObject(pieConf);
+    option.series[0].data = data;
+    renderChart(option,id,'pie')
   }
   render(){
-    const { id } = this.props;
+    const { id, accumuOrderNO, name } = this.props;
     return (
       <div className='pie_chart'>
         <div className='pie_data'>
-          <label>工单创建总量</label>
-          <span>20,000</span>
+          <label>{name}</label>
+          <span>{nfmt(accumuOrderNO)}</span>
         </div>
         <div className='pie_charts'  id={id}></div>
       </div>

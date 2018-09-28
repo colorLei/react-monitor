@@ -1,23 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import "echarts/lib/chart/line";
-import { renderChart } from 'common/util'
+import { renderChart, nfmt, numWithSpace, deepCopyObject} from 'common/util'
+import { AreaConf } from 'common/chartConf'
 
-
-const option = {
-  xAxis: {
-      boundaryGap: false,
-      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat','xxx','Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat','xxx'],
-  },
-  yAxis: {
-
-  },
-  series: [{
-      data: [820, 932, 901, 934, 7000, 1330, 1320,820, 932, 901, 934, 1290, 1330, 1320],
-      type: 'line',
-      areaStyle: {}
-  }]
-};
+const AREA_COLOR = {
+  "国内" : "#a33d42",
+  "国际" : "#ce9b00",
+}
 
 export default class AreaChart extends Component{
   constructor(props) {
@@ -25,36 +15,38 @@ export default class AreaChart extends Component{
   }
 
   componentDidMount(){
-    const { id } = this.props;
+    this._setChartOptions()
+  }
+  _setChartOptions = _ => {
+    const { id, data, name: labelName} = this.props;
+    const option = data.reduce((init, {name,value}) =>{
+      const {data,areaStyle} = init.series[0];
+      init.xAxis.data.push(name)
+      data.push(value)
+      areaStyle.color = AREA_COLOR[labelName]
+      return init;
+    },deepCopyObject(AreaConf))
+
     renderChart(option,id,'line')
   }
   render(){
-    const { id } = this.props;
+    const { id, type, name, accumuOrderNO} = this.props;
     return (
       <div className='area_chart'>
         <div className='data_show'>
           <div className='order_no'>
-            <p>今日累计票量(国内)</p>
-            {/* <Link to='/detail'><p>1 0 0 , 8 6 1</p></Link> */}
-            <p>1 0 0 , 8 6 1</p>
+            <p>今日累计票量({name})</p>
+            <Link to='/detail'>{numWithSpace(accumuOrderNO)}</Link>
           </div>
           <ul>
-            <li>
-              <label>旗舰店</label>
-              <Link to='/detail'><span>88,888</span></Link>
-            </li>
-            <li>
-              <label>xx</label>
-              <span>88,888</span>
-            </li>
-            <li>
-              <label>旗舰店</label>
-              <span>88,888</span>
-            </li>
-            <li>
-              <label>旗舰店</label>
-              <span>88,888</span>
-            </li>
+            {
+              type.map(({name,accumuOrderNO}) => (
+                <li>
+                  <label>{name}</label>
+                  <Link to='/detail'><span>{nfmt(accumuOrderNO)}</span></Link>
+                </li>
+              ))
+            }
           </ul>
         </div>
         <div className='charts'  id={id}></div>

@@ -5,9 +5,9 @@ import { HOME } from 'constant/action-types'
 import BarChart from 'component/detail/bar-chart'
 
 @connect(
-  state => ({
-    collapsed: state.home.collapsed
-  })
+  // state => ({
+  //   collapsed: state.home.collapsed
+  // })
 )
 export default class LeftMenu extends React.Component {
 

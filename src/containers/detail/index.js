@@ -17,9 +17,9 @@ const routes = [
   }
 ]
 @connect(
-  state => ({
-    collapsed: state.home.collapsed
-  })
+  // state => ({
+  //   collapsed: state.home.collapsed
+  // })
 )
 export default class LeftMenu extends React.Component {
   constructor(props) {

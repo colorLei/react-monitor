@@ -1,106 +1,54 @@
 import React, { Component } from 'react';
-import echarts from "echarts/lib/echarts";
+import { Link } from 'react-router-dom';
 import "echarts/lib/chart/bar";
-import 'echarts/lib/component/tooltip';
 import 'echarts/lib/component/legend';
+import { renderChart, nfmt, deepCopyObject} from 'common/util'
+import { barConf } from 'common/chartConf'
 
-
-const option = {
-  textStyle: {
-    color: '#fff'
-},
-  legend: {
-      data:['直接访问','邮件营销'],
-      right:5,
-      textStyle:{
-        color:'#fff'
-      },
-  },
-  grid: {
-      left: '3%',
-      right: '4%',
-      bottom: '3%',
-      containLabel: true
-  },
-  xAxis :{
-      type : 'category',
-      data : ['周一','周二','周三','周四','周五','周六','周日'],
-      axisLine: {
-        lineStyle: {
-            color:'#868686'
-        }
-      },
-      axisLabel:{
-        rotate:45
-      }
-  },
-  yAxis : {
-    show:false
-  },
-  series : [
-      {
-          name:'直接访问',
-          type:'bar',
-          barWidth : 7,
-          data:[320, 332, 301, 334, 390, 330, 320],
-          label: {
-            normal: {
-                show: true,
-                position: 'top'
-            }
-        },
-      },
-      {
-          name:'邮件营销',
-          type:'bar',
-          stack: '广告',
-          barWidth : 7,
-          data:[120, 132, 101, 134, 90, 230, 210],
-          label: {
-            normal: {
-                show: true,
-                position: 'top'
-            }
-          },
-          itemStyle:{
-            color:'#7bd83a'
-          }
-      }
-  ]
-};
-
+const AREA_COLOR = {
+  "国内退票" : "#a33d42",
+  "国际退票" : "#ce9b00",
+  "国内改签" : "#7bd83a",
+  "国际改签" : "#00aef6",
+}
 export default class AreaChart extends Component{
   constructor(props) {
     super(props)
   }
 
   componentDidMount(){
-    const { id } = this.props;
-    const myChart = echarts.init(document.getElementById(id));
-    console.log(myChart)
-    myChart.setOption(option)
+    this._setChartOptions()
   }
+  _setChartOptions = _ => {
+    const { id, data, name: labelName} = this.props;
+    const option = deepCopyObject(barConf);
+    const { xAxis, series } = option ;
+    labelName.forEach((v,i) =>{
+      series[i].name = v;
+      series[i].itemStyle = {
+        color:AREA_COLOR[v]
+      }
+      data.forEach((param) =>{
+        i === 0 && xAxis.data.push(param.name)
+        series[i].data.push(param[`value${i+1}`])
+      })
+    })
+    renderChart(option,id,'bar')
+  }
+
   render(){
-    const { id } = this.props;
+    const { id, type } = this.props;
     return (
       <div className='bar_chart'>
         <ul>
-          <li>
-            <label>国内订单总量</label>
-            <span>20,000</span>
-          </li>
-          <li>
-            <label>国内订单总量</label>
-            <span>20,000</span>
-          </li>
-          <li>
-            <label>国内订单总量</label>
-            <span>20,000</span>
-          </li>
-          <li>
-            <label>国内订单总量</label>
-            <span>20,000</span>
-          </li>
+        {
+          type.map(({name,accumuOrderNO}) => (
+            <li>
+              <label>{name}</label>
+                <Link to='/detail'><span>{nfmt(accumuOrderNO)}</span></Link>
+             </li>
+           ))
+        }
         </ul>
         <div className='charts'  id={id}></div>
       </div>

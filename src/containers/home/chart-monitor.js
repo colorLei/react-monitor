@@ -1,29 +1,63 @@
 import React ,{ Fragment } from 'react';
 import { connect } from 'react-redux'
+import {HOME} from 'constant/action-types'
 import AreaChart from 'component/home/area-chart'
 import BarChart from 'component/home/bar-chart'
 import PieChart from 'component/home/pie-chart'
 
+const MS = 60*1000;
 @connect(
+  state => state.HOME.chartsList
 )
 export default class ChartMonitor extends React.Component {
+  constructor() {
+    super();
+  }
+  componentWillMount() {
+    this.getChartsList();
+    this._Refresh()
+  }
+  componentWillUnmount(){
+    clearInterval(this.timer)
+  }
+  getChartsList = _ => {
+    const {dispatch} = this.props
+    dispatch({
+        type: 'XHR_REQ',
+        action: HOME.GET_CHARTS_LIST
+    })
+  }
+  _Refresh = _ => {
+    this.timer = setInterval(_ =>{
+      this.getChartsList();
+    },MS)
+  }
   render() {
+    const  { line, bar, pie }= this.props
     return (
       <Fragment>
         <div className='chart-line'>
             <div className='left-line'>
-              <AreaChart id='chart1'/>
-              <AreaChart id='chart2'/>
+              {
+                line.map((v,i) => (
+                  <AreaChart id={'lineChart'+i} {...v} key={v.name}/>
+                ))
+              }
             </div>
             <div className='right-line'>
-              <BarChart id='chart3'/>
-              <BarChart id='chart4'/>
+              {
+                bar.map((v,i) => (
+                  <BarChart id={'barChart'+i} {...v} key={v.name}/>
+                ))
+              }
             </div>
         </div>
         <div className='chart-round'>
-          <PieChart id='chart5'/>
-          <PieChart id='chart6'/>
-          <PieChart id='chart7'/>
+          {
+            pie.map((v,i) => (
+              <PieChart id={'pieChart'+i} {...v} key={v.name}/>
+            ))
+          }
         </div>
       </Fragment>
     );

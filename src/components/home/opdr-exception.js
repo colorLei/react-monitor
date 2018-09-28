@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {HOME} from 'constant/action-types'
 
 const TIME_INTERVAL = 2000;
-@connect(state => ({exceptionList: state.LEFT_MENU.exceptionList}))
+@connect(state => ({exceptionList: state.HOME.exceptionList}))
 export default class OpdrException extends Component {
     constructor() {
         super();

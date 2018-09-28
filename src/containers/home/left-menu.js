@@ -1,7 +1,5 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-import {connect} from 'react-redux'
-import {HOME} from 'constant/action-types'
 import OpdrException from 'component/home/opdr-exception'
 import BusinessGroup from 'component/home/business-group'
 import NowTime from 'component/home/now-time'
@@ -18,7 +16,6 @@ const site_btn = [
         text: '可选座位'
     }
 ];
-@connect(state => ({exceptionList: state.LEFT_MENU.exceptionList}))
 export default class LeftMenu extends React.Component {
 
     render() {
