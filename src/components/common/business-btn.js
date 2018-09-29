@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import  { Link }  from  'react-router-dom';
 
 const letters = ['A','B','J','K']
-
+const groupLen = 5;
+const ArrayLen = new Array(groupLen).fill({group:0})
 export default class BusinessBtn extends Component{
   constructor(props) {
     super(props)
@@ -11,7 +12,7 @@ export default class BusinessBtn extends Component{
     const { leader,BusinessGroups,index,exception } = this.props;
 
     const NotLink = ({text,exception}) =>(
-       <button className={exception?'color-red':'color-blue'}>{text}</button>
+       <button className={exception?'color-red':text?'color-blue':'color-gray'}>{text}</button>
     )
 
     const BtnNo = (props) => {
@@ -26,7 +27,7 @@ export default class BusinessBtn extends Component{
               <Link to="/storage/chart">
                 <NotLink {...props}/>
               </Link> */
-              text?<NotLink {...props}/>:<button className='color-gray'>{text}</button>
+              <NotLink {...props}/>
             }
             {index === letters.length-1 ? <div className="right_no">{leader?1:groupIndexCopy+2}</div> : null }
           </div>
@@ -40,9 +41,10 @@ export default class BusinessBtn extends Component{
         </div>
         <div>
           {
-            BusinessGroups.map(({group, exception},index) => (
-              <BtnNo text={group} groupIndex={index} exception={exception}/>
-            ))
+            ArrayLen.map((v,i) => {
+              const {group,exception} = i < BusinessGroups.length ? BusinessGroups[i] : v ;
+              return <BtnNo text={group} groupIndex={i} exception={exception}/>
+            })
           }
         </div>
       </div>

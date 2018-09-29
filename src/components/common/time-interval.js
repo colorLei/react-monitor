@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 
 
 export default class TimeInterval extends Component{
@@ -6,9 +6,7 @@ export default class TimeInterval extends Component{
     super(props)
   }
   render(){
-
-    const hour_arr = new Array(24).fill(1);
-
+    const {hoursList} = this.props
     return (
       <div className='time_interval'>
           <ul className="data_left">
@@ -27,13 +25,13 @@ export default class TimeInterval extends Component{
           </ul>
           <ul className="data_right">
             {
-              hour_arr.map((v,i) =>
+              hoursList.map(({date,todayData,yesterday,sevenData}) =>
                   (
                     <li>
-                      <p>{i}点段</p>
-                      <p>100</p>
-                      <p>80</p>
-                      <p className='average_seven'>90</p>
+                      <p>{date}点段</p>
+                      <p>{todayData}</p>
+                      <p>{yesterday}</p>
+                      <p className='average_seven'>{sevenData}</p>
                     </li>
                   )
                 )

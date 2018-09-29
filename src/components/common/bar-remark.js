@@ -1,21 +1,19 @@
 import React from 'react';
 
-
-
-export default () => {
+export default ({one,two,three}) => {
   return (
     <ul className='bar_remark'>
       <li>
        <label></label>
-        <span>近7日数据</span>
+        <span>{one}</span>
             </li>
             <li>
         <label></label>
-        <span>近7日均量</span>
+        <span>{two}</span>
             </li>
             <li>
         <label></label>
-        <span>近28日均量</span>
+        <span>{three}</span>
      </li>
    </ul>
   )

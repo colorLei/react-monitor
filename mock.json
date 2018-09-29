@@ -53,9 +53,69 @@
         "code":3
       }
     ]
+  },
+  {
+    "ret": true,
+    "data":[
+      {
+        "date":"0",
+        "todayData":100,
+        "yesterday":100,
+        "sevenData":100
+      },
+      {
+        "date":"1",
+        "todayData":100,
+        "yesterday":100,
+        "sevenData":100
+      },{
+        "date":"2",
+        "todayData":100,
+        "yesterday":100,
+        "sevenData":100
+      },{
+        "date":"3",
+        "todayData":100,
+        "yesterday":100,
+        "sevenData":100
+      },{
+        "date":"4",
+        "todayData":100,
+        "yesterday":100,
+        "sevenData":100
+      },{
+        "date":"5",
+        "todayData":100,
+        "yesterday":100,
+        "sevenData":100
+      },{
+        "date":"6",
+        "todayData":100,
+        "yesterday":100,
+        "sevenData":100
+      },{
+        "date":"7",
+        "todayData":100,
+        "yesterday":100,
+        "sevenData":100
+      },{
+        "date":"8",
+        "todayData":100,
+        "yesterday":100,
+        "sevenData":100
+      },{
+        "date":"9",
+        "todayData":100,
+        "yesterday":100,
+        "sevenData":100
+      },{
+        "date":"10",
+        "todayData":100,
+        "yesterday":100,
+        "sevenData":100
+      }
+    ]
   }
-
-
 
 ]
 

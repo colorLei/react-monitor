@@ -91,11 +91,12 @@
     }
     .business_group{
       width: 83%;
-      margin:12px auto 10px;
+      margin:12px auto 0px;
       border-left: 2px solid #fff;
       border-right: 2px solid #fff;
       padding: 30px 30px 20px;
       display: flex;
+      // min-height:calc(100vh - 340px);
       justify-content: space-around;
       .business_leader{
         margin-bottom: 60px;

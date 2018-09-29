@@ -21,8 +21,9 @@ export const renderChart = (dataSource = {}, htmlDom, type) => {
 
     let myChart = echarts.getInstanceByDom(document.getElementById(htmlDom));
     if (myChart === undefined) {
-        myChart = echarts.init(document.getElementById(htmlDom));
-        window.addEventListener("resize", function () {
+      myChart = echarts.init(document.getElementById(htmlDom));
+      myChart.showLoading();
+      window.addEventListener("resize", function () {
             myChart.resize();
         });
     }
@@ -35,9 +36,7 @@ export const renderChart = (dataSource = {}, htmlDom, type) => {
         color
     } = dataSource;
     if (myChart) {
-        myChart.showLoading();
         if (dataSource) {
-            myChart.hideLoading();
             const options = type === 'pie'
                 ? dataSource
                 : {
@@ -82,6 +81,7 @@ export const renderChart = (dataSource = {}, htmlDom, type) => {
                     })
                 }
             myChart.setOption(options)
+            myChart.hideLoading();
         }
     }
 };

@@ -5,7 +5,11 @@ import BarRemark from 'component/common/bar-remark'
 import { renderChart, deepCopyObject} from 'common/util'
 import { hourConf } from 'common/chartConf'
 
-
+const POINT_COLOR = {
+  one:'今日数据',
+  two:'昨日数据',
+  three:'前7日均量',
+}
 export default class AreaChart extends Component{
   constructor(props) {
     super(props)
@@ -18,7 +22,7 @@ export default class AreaChart extends Component{
     return (
         <div className='detail_bar_chart'>
           <div className='bar_chart_type' id='hour_chart'></div>
-          <BarRemark/>
+          <BarRemark {...POINT_COLOR}/>
         </div>
     );
   }

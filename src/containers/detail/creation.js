@@ -1,21 +1,32 @@
 import React , { Fragment } from 'react';
 import { connect } from 'react-redux'
-// import { Menu, Icon, Button } from 'common/my_antd';
-import { HOME } from 'constant/action-types'
+import { DETAIL } from 'constant/action-types'
 import HourChart from 'component/detail/hour-chart'
 import TimeInterval from 'component/common/time-interval'
 @connect(
-  // state => ({
-  //   collapsed: state.home.collapsed
-  // })
+  state => ({
+    hoursList: state.DETAIL.hoursList
+  })
 )
 export default class LeftMenu extends React.Component {
-
+  constructor(props) {
+    super(props)
+  }
+  componentWillMount(){
+    this.getHoursList()
+  }
+  getHoursList(){
+    const {dispatch} = this.props
+    dispatch({
+      type: DETAIL.GET_HOURS_LIST.toString()
+    })
+  }
   render() {
+    const {hoursList} = this.props
     return (
       <Fragment>
-        <HourChart/>
-        <TimeInterval/>
+        <HourChart hoursList={hoursList}/>
+        <TimeInterval hoursList={hoursList}/>
       </Fragment>
     );
   }

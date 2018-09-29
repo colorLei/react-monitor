@@ -14,50 +14,47 @@ const routes = [
         path: '/detail/creation'
     }
 ]
+const levelNumber = ['ONE', 'TWO', 'THREE']
 @connect(state => state.DETAIL)
 export default class LeftMenu extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {
-
-        }
+        this.state = {}
     }
     componentWillMount() {
       this._init();
     }
     _init = _ => {
+      levelNumber.forEach((v,i) => {
+        this.setLevelList(i)
+      })
+    }
+    setLevelList = (i) =>{
       const {dispatch} = this.props
       dispatch({
-        type: DETAIL.GET_LEVELONE_LIST.toString()
-      })
-      dispatch({
-        type: DETAIL.GET_LEVELTWO_LIST.toString()
-       })
-      dispatch({
-        type: DETAIL.GET_LEVELTHREE_LIST.toString()
+        type: DETAIL[`GET_LEVEL${levelNumber[i]}_LIST`].toString()
       })
     }
     render() {
         const {
             Routes,
-            active: {
-                typeOne,
-                typeTwo,
-                typeThree
-            }
+            activeOne,
+            activeTwo,
+            activeThree,
         } = this.props;
-        console.log(this.props)
         return (
             <Fragment>
                 <div className='detail_top'>
                     <div className='title'>
                         <label>数据详情：</label>
-                        <span>{typeOne.name}-{typeTwo.name}-{typeThree.name}</span>
+                        <span>{activeOne.name}-{activeTwo.name}-{activeThree.name}</span>
                     </div>
                     <SelectGroup routes={routes}/>
                 </div>
-                <Routes/>
-                <Selects {...this.props}/>
+                <div style={{minHeight:'400px'}}>
+                  <Routes/>
+                </div>
+                <Selects {...this.props} setLevelList={ this.setLevelList }/>
             </Fragment>
         );
     }

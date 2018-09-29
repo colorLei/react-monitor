@@ -11,6 +11,8 @@ export const DETAIL = {
   GET_LEVELONE_LIST:mockBaseUrl+'getLevelOne',
   GET_LEVELTWO_LIST:mockBaseUrl+'getLevelTwo',
   GET_LEVELTHREE_LIST:mockBaseUrl+'getLevelThree',
+  SET_LEVELS_DATA:false,
+  GET_HOURS_LIST:mockBaseUrl+'getHoursList'
 };
 
 export default {

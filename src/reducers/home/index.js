@@ -7,7 +7,7 @@ export default handleActions({
     return { ...state, exceptionList: payload.data }
   },
   [HOME.GET_LEADER_AND_GROUP.OK](state,{ payload }){
-    return { ...state, leaderAndGroupList: payload }
+    return { ...state, leaderAndGroupList: payload.data}
   },
   [HOME.GET_CHARTS_LIST.OK](state,{ payload }){
     return { ...state, chartsList: payload.data }

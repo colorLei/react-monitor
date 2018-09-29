@@ -12,22 +12,27 @@ export default handleActions({
   [DETAIL.GET_LEVELTHREE_LIST.OK](state,{ payload }){
     return { ...state, levelThree: payload.data }
   },
+  [DETAIL.SET_LEVELS_DATA](state,{ type, ...payload}){
+    return { ...state,...payload }
+  },
+  [DETAIL.GET_HOURS_LIST.OK](state,{ payload }){
+    return { ...state, hoursList: payload.data }
+  },
 },{
   levelOne:[],
   levelTwo:[],
   levelThree:[],
-  active:{
-    typeOne:{
-      name:"国内",
-      code:1
-    },
-    typeTwo:{
-      name:"票量",
-      code:1
-    },
-    typeThree:{
-      name:"全部",
-      code:0
-    },
-  }
+  activeOne:{
+    name:"国内",
+    code:1
+  },
+  activeTwo:{
+    name:"票量",
+    code:1
+  },
+  activeThree:{
+     name:"全部",
+     code:'all'
+  },
+  hoursList:[]
 })
