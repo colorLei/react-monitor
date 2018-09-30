@@ -36,7 +36,10 @@ export default class AreaChart extends Component{
         <div className='data_show'>
           <div className='order_no'>
             <p>今日累计票量({name})</p>
-            <Link to='/detail'>{numWithSpace(accumuOrderNO)}</Link>
+            <Link to={{
+  pathname: '/detail',
+  state: { levelOne: {name:'国内',code:1} }
+}}>{numWithSpace(accumuOrderNO)}</Link>
           </div>
           <ul>
             {

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import "echarts/lib/chart/pie";
 import { renderChart, nfmt, deepCopyObject} from 'common/util'
 import { pieConf } from 'common/chartConf'

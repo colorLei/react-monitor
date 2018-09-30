@@ -15,8 +15,14 @@ export default handleActions({
   [DETAIL.SET_LEVELS_DATA](state,{ type, ...payload}){
     return { ...state,...payload }
   },
+  [DETAIL.CLEAR_LEVELTHREE_LIST](state){
+    return { ...state,levelThree:[] }
+  },
   [DETAIL.GET_HOURS_LIST.OK](state,{ payload }){
     return { ...state, hoursList: payload.data }
+  },
+  [DETAIL.GET_TENDENCY_DETAIL.OK](state,{ payload }){
+    return { ...state, tendencyDetail: payload.data }
   },
 },{
   levelOne:[],
@@ -34,5 +40,8 @@ export default handleActions({
      name:"全部",
      code:'all'
   },
-  hoursList:[]
+  hoursList:[],
+  tendencyDetail:{
+    arangeData:[]
+  }
 })

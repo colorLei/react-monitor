@@ -1,5 +1,6 @@
 import React, {Fragment} from 'react';
 import {connect} from 'react-redux'
+import {Redirect} from "react-router-dom";
 import {DETAIL} from 'constant/action-types'
 import SelectGroup from 'component/detail/select-group'
 import Selects from 'component/common/selects'
@@ -19,15 +20,20 @@ const levelNumber = ['ONE', 'TWO', 'THREE']
 export default class LeftMenu extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {}
+        this.state = {
+          redirectToReferrer:false
+        }
     }
     componentWillMount() {
       this._init();
     }
     _init = _ => {
+      const { location:{ state }} = this.props
+      // typeof state === 'undefined' && this.setState({ redirectToReferrer: true });
       levelNumber.forEach((v,i) => {
         this.setLevelList(i)
       })
+
     }
     setLevelList = (i) =>{
       const {dispatch} = this.props
@@ -42,8 +48,10 @@ export default class LeftMenu extends React.Component {
             activeTwo,
             activeThree,
         } = this.props;
+        const { redirectToReferrer } = this.state;
         return (
             <Fragment>
+                {redirectToReferrer && <Redirect to='/home' />}
                 <div className='detail_top'>
                     <div className='title'>
                         <label>数据详情：</label>
@@ -52,7 +60,9 @@ export default class LeftMenu extends React.Component {
                     <SelectGroup routes={routes}/>
                 </div>
                 <div style={{minHeight:'400px'}}>
+                {
                   <Routes/>
+                }
                 </div>
                 <Selects {...this.props} setLevelList={ this.setLevelList }/>
             </Fragment>

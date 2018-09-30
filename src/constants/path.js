@@ -12,7 +12,9 @@ export const DETAIL = {
   GET_LEVELTWO_LIST:mockBaseUrl+'getLevelTwo',
   GET_LEVELTHREE_LIST:mockBaseUrl+'getLevelThree',
   SET_LEVELS_DATA:false,
-  GET_HOURS_LIST:mockBaseUrl+'getHoursList'
+  CLEAR_LEVELTHREE_LIST:false,
+  GET_HOURS_LIST:mockBaseUrl+'getHoursList',
+  GET_TENDENCY_DETAIL:mockBaseUrl+'getTendencyDetail'
 };
 
 export default {

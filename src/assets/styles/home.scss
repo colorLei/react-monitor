@@ -96,7 +96,6 @@
       border-right: 2px solid #fff;
       padding: 30px 30px 20px;
       display: flex;
-      // min-height:calc(100vh - 340px);
       justify-content: space-around;
       .business_leader{
         margin-bottom: 60px;
@@ -142,5 +141,14 @@
   > .home_right{
     flex: 1;
     padding: 25px 20px 20px 0 ;
+  }
+}
+
+@keyframes maxHeightTranstion {
+  from {
+    max-height: 0
+  }
+  to {
+    max-height: 72px
   }
 }

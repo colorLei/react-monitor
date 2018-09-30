@@ -39,9 +39,13 @@ export default class BusinessBtn extends Component {
     }
     _operate = i => {
       const { typeOne, typeTwo, typeThree} = this.state,
-            {dispatch, setLevelList } = this.props;
-      if(++i < level.length){
+            {dispatch, setLevelList } = this.props,
+            { length } = level;
+      if(++i < length){
         setLevelList(i)
+        i === 1 && dispatch({
+          type:DETAIL.CLEAR_LEVELTHREE_LIST.toString()
+        })
       }else{
         dispatch({
           type:DETAIL.SET_LEVELS_DATA.toString(),
