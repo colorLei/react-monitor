@@ -42,7 +42,7 @@ export default class BusinessBtn extends Component {
             {dispatch, setLevelList } = this.props,
             { length } = level;
       if(++i < length){
-        setLevelList(i)
+        setLevelList(i,this.state[`type${levelNumber[i]}`].code)
         i === 1 && dispatch({
           type:DETAIL.CLEAR_LEVELTHREE_LIST.toString()
         })
@@ -64,7 +64,7 @@ export default class BusinessBtn extends Component {
                         <li>
                             <label>数据{v}级类型</label>
                             <Select
-                                value={this.state[`type${levelNumber[i]}`].code}
+                                value={this.state[`type${levelNumber[i]}`].name}
                                 placeholder = '请选择'
                                 size='small'
                                 style={{width: 100}}

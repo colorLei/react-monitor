@@ -37,15 +37,25 @@ export default class AreaChart extends Component{
   }
 
   render(){
-    const { id, type } = this.props;
+    const { id, type, levelOne } = this.props;
     return (
       <div className='bar_chart'>
         <ul>
         {
-          type.map(({name,accumuOrderNO}) => (
+          type.map(({name,value,code}) => (
             <li>
               <label>{name}</label>
-                <Link to='/detail'><span>{nfmt(accumuOrderNO)}</span></Link>
+                <Link to={{
+                            pathname: '/detail',
+                            state: {
+                                activeOne:levelOne,
+                                activeTwo:{name,code},
+                                activeThree:{
+                                  code:'All',
+                                  name:'全部'
+                                }
+                            }
+                    }}><span>{nfmt(value)}</span></Link>
              </li>
            ))
         }

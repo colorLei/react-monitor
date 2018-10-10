@@ -15,9 +15,10 @@ const routes = [
         path: '/detail/creation'
     }
 ]
-const levelNumber = ['ONE', 'TWO', 'THREE']
+const levelNumber = ['ONE', 'TWO', 'THREE'];
+const activeNumber = ['One', 'Two', 'Three']
 @connect(state => state.DETAIL)
-export default class LeftMenu extends React.Component {
+export default class DETAILPAGE extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -28,18 +29,45 @@ export default class LeftMenu extends React.Component {
       this._init();
     }
     _init = _ => {
-      const { location:{ state }} = this.props
-      // typeof state === 'undefined' && this.setState({ redirectToReferrer: true });
-      levelNumber.forEach((v,i) => {
-        this.setLevelList(i)
+      const { dispatch, location:{ state }} = this.props;
+      console.log(state)
+      if(typeof state === 'undefined'){
+        this.setState({ redirectToReferrer: true })
+        return;
+      }
+      const {activeOne,activeTwo,activeThree} = state;
+      dispatch({
+        type:DETAIL.SET_LEVELS_DATA.toString(),
+        activeOne,
+        activeTwo,
+        activeThree
       })
-
+      levelNumber.forEach((v,i) => {
+        this.setLevelList(i,state[`active${activeNumber[i]}`].code)
+      })
     }
-    setLevelList = (i) =>{
+    setLevelList = (i,showType) =>{
       const {dispatch} = this.props
       dispatch({
-        type: DETAIL[`GET_LEVEL${levelNumber[i]}_LIST`].toString()
+        type: DETAIL[`GET_LEVEL${levelNumber[i]}_LIST`].toString(),
+        data: {
+          mark: i+1,
+          showType
+        },
+        method: 'post'
       })
+      if(i===levelNumber.length-1){
+        // dispatch({
+        //   type: DETAIL.GET_HOURS_LIST.toString(),
+        //   data: {
+        //     primaryType: 1,
+        //     secondaryType: 1,
+        //     tertiaryType: 1,
+        //     hostryMark
+        //   },
+        //   method: 'post'
+        // })
+      }
     }
     render() {
         const {
@@ -64,7 +92,9 @@ export default class LeftMenu extends React.Component {
                   <Routes/>
                 }
                 </div>
-                <Selects {...this.props} setLevelList={ this.setLevelList }/>
+                {
+                  activeOne.code && <Selects {...this.props} setLevelList={ this.setLevelList }/>
+                }
             </Fragment>
         );
     }

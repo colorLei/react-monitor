@@ -28,18 +28,9 @@ export default handleActions({
   levelOne:[],
   levelTwo:[],
   levelThree:[],
-  activeOne:{
-    name:"国内",
-    code:1
-  },
-  activeTwo:{
-    name:"票量",
-    code:1
-  },
-  activeThree:{
-     name:"全部",
-     code:'all'
-  },
+  activeOne:{},
+  activeTwo:{},
+  activeThree:{},
   hoursList:[],
   tendencyDetail:{
     arangeData:[]

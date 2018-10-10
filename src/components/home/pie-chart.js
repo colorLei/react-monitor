@@ -19,12 +19,12 @@ export default class AreaChart extends Component{
     renderChart(option,id,'pie')
   }
   render(){
-    const { id, accumuOrderNO, name } = this.props;
+    const { id, value, category } = this.props;
     return (
       <div className='pie_chart'>
         <div className='pie_data'>
-          <label>{name}</label>
-          <span>{nfmt(accumuOrderNO)}</span>
+          <label>{category.name}创建总量</label>
+          <span>{nfmt(value)}</span>
         </div>
         <div className='pie_charts'  id={id}></div>
       </div>

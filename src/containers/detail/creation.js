@@ -8,7 +8,7 @@ import TimeInterval from 'component/common/time-interval'
     hoursList: state.DETAIL.hoursList
   })
 )
-export default class LeftMenu extends React.Component {
+export default class CREATION extends React.Component {
   constructor(props) {
     super(props)
   }

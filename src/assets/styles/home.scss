@@ -53,6 +53,7 @@
         height: 72px;
         overflow-x: hidden;
         overflow-y: auto;
+        // animation: maxHeightTranstion 2s linear;
         &::-webkit-scrollbar{
           width: 6px;
           background-color: $color-background;

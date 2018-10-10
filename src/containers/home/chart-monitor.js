@@ -39,14 +39,14 @@ export default class ChartMonitor extends React.Component {
             <div className='left-line'>
               {
                 line.map((v,i) => (
-                  <AreaChart id={'lineChart'+i} {...v} key={v.name}/>
+                  <AreaChart id={'lineChart'+i} {...v} key={v.levelOne.name}/>
                 ))
               }
             </div>
             <div className='right-line'>
               {
                 bar.map((v,i) => (
-                  <BarChart id={'barChart'+i} {...v} key={v.name}/>
+                  <BarChart id={'barChart'+i} {...v} key={v.levelOne.name}/>
                 ))
               }
             </div>
@@ -54,7 +54,7 @@ export default class ChartMonitor extends React.Component {
         <div className='chart-round'>
           {
             pie.map((v,i) => (
-              <PieChart id={'pieChart'+i} {...v} key={v.name}/>
+              <PieChart id={'pieChart'+i} {...v} key={v.category.name}/>
             ))
           }
         </div>

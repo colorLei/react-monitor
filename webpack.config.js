@@ -34,6 +34,22 @@ module.exports = merge(baseConfigs, {
           '^/workbench': ''
         },
       },
+      '/amountskyruler':{
+        target: 'http://10.86.82.217:8080/',
+        changeOrigin: true,
+        logLevel: 'debug',
+        pathRewrite: {
+          '^/amountskyruler': 'amountskyruler'
+        },
+      },
+       '/opdr':{
+        target: 'http://10.86.82.217:8080/',
+        changeOrigin: true,
+        logLevel: 'debug',
+        pathRewrite: {
+          '^/opdr': 'opdr'
+        },
+      },
   },
   }
 })
