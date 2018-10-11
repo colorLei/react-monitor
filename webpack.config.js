@@ -35,7 +35,7 @@ module.exports = merge(baseConfigs, {
         },
       },
       '/amountskyruler':{
-        target: 'http://10.86.82.217:8080/',
+        target: 'http://10.86.82.164:8080/',
         changeOrigin: true,
         logLevel: 'debug',
         pathRewrite: {
@@ -43,7 +43,7 @@ module.exports = merge(baseConfigs, {
         },
       },
        '/opdr':{
-        target: 'http://10.86.82.217:8080/',
+        target: 'http://10.86.82.142:8080/',
         changeOrigin: true,
         logLevel: 'debug',
         pathRewrite: {

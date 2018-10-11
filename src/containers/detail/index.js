@@ -9,14 +9,22 @@ import Selects from 'component/common/selects'
 const routes = [
     {
         name: '历史趋势',
-        path: '/detail/tendency'
+        path: '/detail/tendency',
+        code:'1'
     }, {
         name: '小时创建',
-        path: '/detail/creation'
+        path: '/detail/creation',
+        code:'2'
     }
 ]
 const levelNumber = ['ONE', 'TWO', 'THREE'];
 const activeNumber = ['One', 'Two', 'Three']
+
+const ASK = routes.reduce((init,{path,code}) => {
+  init[`#${path}`] = code ;
+  return init ;
+},{})
+
 @connect(state => state.DETAIL)
 export default class DETAILPAGE extends React.Component {
     constructor(props) {
@@ -25,12 +33,11 @@ export default class DETAILPAGE extends React.Component {
           redirectToReferrer:false
         }
     }
-    componentWillMount() {
+    componentDidMount() {
       this._init();
     }
     _init = _ => {
       const { dispatch, location:{ state }} = this.props;
-      console.log(state)
       if(typeof state === 'undefined'){
         this.setState({ redirectToReferrer: true })
         return;
@@ -47,7 +54,7 @@ export default class DETAILPAGE extends React.Component {
       })
     }
     setLevelList = (i,showType) =>{
-      const {dispatch} = this.props
+      const { dispatch,location:{ state: {activeOne,activeTwo,activeThree}}} = this.props
       dispatch({
         type: DETAIL[`GET_LEVEL${levelNumber[i]}_LIST`].toString(),
         data: {
@@ -56,18 +63,22 @@ export default class DETAILPAGE extends React.Component {
         },
         method: 'post'
       })
-      if(i===levelNumber.length-1){
-        // dispatch({
-        //   type: DETAIL.GET_HOURS_LIST.toString(),
-        //   data: {
-        //     primaryType: 1,
-        //     secondaryType: 1,
-        //     tertiaryType: 1,
-        //     hostryMark
-        //   },
-        //   method: 'post'
-        // })
+      if(i === levelNumber.length-1) {
+        // this.getDetailData(activeOne.code,activeTwo.code,activeThree.code)
       }
+    }
+    getDetailData = (codeOne,codeTwo,codeThree) => {
+      const { dispatch } = this.props;
+      dispatch({
+        type: DETAIL.GET_HOURS_LIST.toString(),
+        data: {
+          primaryType: codeOne,
+          secondaryType: codeTwo,
+          tertiaryType: codeThree,
+          hostryMark:ASK[location.hash]
+        },
+        method: 'post'
+      })
     }
     render() {
         const {
@@ -93,7 +104,9 @@ export default class DETAILPAGE extends React.Component {
                 }
                 </div>
                 {
-                  activeOne.code && <Selects {...this.props} setLevelList={ this.setLevelList }/>
+                  activeOne.code && <Selects {...this.props}
+                  setLevelList={ this.setLevelList }
+                  getDetailData={this.getDetailData}/>
                 }
             </Fragment>
         );

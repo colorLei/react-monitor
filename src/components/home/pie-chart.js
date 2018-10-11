@@ -19,12 +19,22 @@ export default class AreaChart extends Component{
     renderChart(option,id,'pie')
   }
   render(){
-    const { id, value, category } = this.props;
+    const { id, levelOne, category } = this.props;
     return (
       <div className='pie_chart'>
         <div className='pie_data'>
           <label>{category.name}创建总量</label>
-          <span>{nfmt(value)}</span>
+          <Link to={{
+                            pathname: '/detail',
+                            state: {
+                                activeOne:levelOne,
+                                activeTwo:category,
+                                activeThree:{
+                                  code:'All',
+                                  name:'全部'
+                                }
+                            }
+                    }}><span>{nfmt(category.value)}</span></Link>
         </div>
         <div className='pie_charts'  id={id}></div>
       </div>

@@ -39,7 +39,7 @@ export default class BusinessBtn extends Component {
     }
     _operate = i => {
       const { typeOne, typeTwo, typeThree} = this.state,
-            {dispatch, setLevelList } = this.props,
+            {dispatch, setLevelList, getDetailData } = this.props,
             { length } = level;
       if(++i < length){
         setLevelList(i,this.state[`type${levelNumber[i]}`].code)
@@ -53,6 +53,7 @@ export default class BusinessBtn extends Component {
           activeTwo: typeTwo,
           activeThree: typeThree
         })
+        // getDetailData(typeOne.code,typeTwo.code,typeThree.code)
       }
     }
     render() {

@@ -3,22 +3,28 @@ import { connect } from 'react-redux'
 import { DETAIL } from 'constant/action-types'
 import HourChart from 'component/detail/hour-chart'
 import TimeInterval from 'component/common/time-interval'
-@connect(
-  state => ({
-    hoursList: state.DETAIL.hoursList
-  })
-)
+
+const activeNumber = ['One', 'Two', 'Three']
+@connect(state => state.DETAIL)
 export default class CREATION extends React.Component {
   constructor(props) {
     super(props)
   }
-  componentWillMount(){
-    this.getHoursList()
+  shouldComponentUpdate(nextProps){
+    console.log(nextProps)
+    console.log(this.props)
   }
   getHoursList(){
-    const {dispatch} = this.props
+    const {dispatch,activeOne, activeTwo, activeThree} = this.props
     dispatch({
-      type: DETAIL.GET_HOURS_LIST.toString()
+      type: DETAIL.GET_HOURS_LIST.toString(),
+      data: {
+        primaryType: activeOne.code,
+        secondaryType: activeTwo.code,
+        tertiaryType: activeThree.code,
+        hostryMark:'2'
+      },
+      method: 'post'
     })
   }
   render() {
