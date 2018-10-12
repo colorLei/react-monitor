@@ -1,6 +1,7 @@
 
 import { handleActions } from 'redux-actions'
 import { DETAIL } from 'constant/action-types'
+import { DetailRoutes } from 'common/config'
 
 export default handleActions({
   [DETAIL.GET_LEVELONE_LIST.OK](state,{ payload }){
@@ -12,8 +13,8 @@ export default handleActions({
   [DETAIL.GET_LEVELTHREE_LIST.OK](state,{ payload }){
     return { ...state, levelThree: payload.data }
   },
-  [DETAIL.SET_LEVELS_DATA](state,{ type, ...payload}){
-    return { ...state,...payload }
+  [DETAIL.SET_DETAIL_PAGE_ACTIVE](state,{ type, ...payload}){
+    return { ...state,...payload}
   },
   [DETAIL.CLEAR_LEVELTHREE_LIST](state){
     return { ...state,levelThree:[] }
@@ -22,7 +23,27 @@ export default handleActions({
     return { ...state, hoursList: payload.data }
   },
   [DETAIL.GET_TENDENCY_DETAIL.OK](state,{ payload }){
-    return { ...state, tendencyDetail: payload.data }
+    return { ...state, tendencyDetail: payload.data[0] }
+  },
+  [DETAIL.GET_LEVEL_NAME.OK](state,{ payload }){
+    const { levelOne,levelTwo,levelThree } = payload.data;
+    const param = `${levelOne.code}/${levelTwo.code}/${levelThree.code}`;
+    const detailRoutesConf = DetailRoutes.map(v => {
+            return {
+                ...v,
+                path: v.path + param
+            }
+    })
+    return { 
+              ...state,
+              activeOne:levelOne,
+              activeTwo:levelTwo,
+              activeThree:levelThree,
+              detailRoutesConf
+          }
+  },
+  [DETAIL.GET_LEVEL_NAME.NOK](state,{ payload }){
+    return { ...state,hostryMark:false}
   },
 },{
   levelOne:[],
@@ -33,6 +54,8 @@ export default handleActions({
   activeThree:{},
   hoursList:[],
   tendencyDetail:{
-    arangeData:[]
-  }
+    days:[]
+  },
+  hostryMark:true,
+  detailRoutesConf:[]
 })

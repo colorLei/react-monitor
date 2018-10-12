@@ -4,6 +4,7 @@ import "echarts/lib/chart/bar";
 import 'echarts/lib/component/legend';
 import { renderChart, nfmt, deepCopyObject} from 'common/util'
 import { barConf } from 'common/chartConf'
+import { selectAll, routerConf } from 'common/config'
 
 const AREA_COLOR = {
   "国内退票" : "#a33d42",
@@ -46,14 +47,11 @@ export default class AreaChart extends Component{
             <li>
               <label>{name}</label>
                 <Link to={{
-                            pathname: '/detail',
+                            pathname:`${routerConf.detail}${levelOne.code}/${code}/${selectAll.code}`,
                             state: {
                                 activeOne:levelOne,
                                 activeTwo:{name,code},
-                                activeThree:{
-                                  code:'All',
-                                  name:'全部'
-                                }
+                                activeThree:selectAll
                             }
                     }}><span>{nfmt(value)}</span></Link>
              </li>

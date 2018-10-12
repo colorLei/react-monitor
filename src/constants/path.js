@@ -1,6 +1,6 @@
 const baseUrl = '/workbench/'
-const mockBaseUrl = 'http://result.eolinker.com/1Jr4aJ16d8c8c4e50463a22e4e83dec43f149b2aa735901?uri='
-const betaUrl = '/amountskyruler/';
+const betaUrl = 'http://result.eolinker.com/1Jr4aJ16d8c8c4e50463a22e4e83dec43f149b2aa735901?uri='
+// const betaUrl =  '/amountskyruler/';
 
 export const HOME = {
  GET_EXCEPTION_LIST: baseUrl+'opdr/taskShow',
@@ -12,10 +12,11 @@ export const DETAIL = {
   GET_LEVELONE_LIST:betaUrl+'showAllType',
   GET_LEVELTWO_LIST:betaUrl+'showAllType',
   GET_LEVELTHREE_LIST:betaUrl+'showAllType',
-  SET_LEVELS_DATA:false,
+  SET_DETAIL_PAGE_ACTIVE:false,
   CLEAR_LEVELTHREE_LIST:false,
   GET_HOURS_LIST:betaUrl+'showDataDetail',
-  GET_TENDENCY_DETAIL:mockBaseUrl+'getTendencyDetail'
+  GET_TENDENCY_DETAIL:betaUrl+'showDataDetail',
+  GET_LEVEL_NAME:betaUrl+'getLevelName'
 };
 
 export default {

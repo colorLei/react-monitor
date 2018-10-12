@@ -25,13 +25,13 @@ export default class TimeInterval extends Component{
           </ul>
           <ul className="data_right">
             {
-              hoursList.map(({date,todayData,yesterday,sevenData}) =>
+              hoursList.map(({dateHour,todayData,yesterdayData,weekData}) =>
                   (
                     <li>
-                      <p>{date}点段</p>
+                      <p>{dateHour}</p>
                       <p>{todayData}</p>
-                      <p>{yesterday}</p>
-                      <p className='average_seven'>{sevenData}</p>
+                      <p>{yesterdayData}</p>
+                      <p className='average_seven'>{weekData}</p>
                     </li>
                   )
                 )

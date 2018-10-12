@@ -1,6 +1,5 @@
 import moment from 'moment'
 import echarts from "echarts/lib/echarts";
-
 /**
    * 转换日期，eg:2016-6-18 20:00
    * @param {Date}
@@ -87,15 +86,13 @@ export const renderChart = (dataSource = {}, htmlDom, type) => {
 };
 
 export const numWithSpace = (num = 0) => (
-  nfmt(num).split('').join(' ').replace(/,\s+/g,',')
+  num?nfmt(num).split('').join(' ').replace(/,\s+/g,','):'0'
 )
 
 export const nfmt = (num = 0) => (
-  num.toString().replace(/(\d)(?=(?:\d{3})+$)/g, "$1,")
+  num?num.toString().replace(/(\d)(?=(?:\d{3})+$)/g, "$1,"):'0'
 )
 
 export const deepCopyObject = (obj = {}) => (
   JSON.parse(JSON.stringify(obj))
 )
-
-

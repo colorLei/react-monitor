@@ -20,13 +20,13 @@ const root = [
         meta: {},
         children: [
             {
-                path: '/creation',
+                path: '/creation/:levelOne/:levelTwo/:levelThree',
                 name: 'creation',
                 component: _import_components('detail/creation'),
                 meta: {}
             },
             {
-                path: '/tendency',
+                path: '/tendency/:levelOne/:levelTwo/:levelThree',
                 redirectFrom: '/detail',
                 name: 'tendency',
                 component: _import_components('detail/tendency'),
@@ -63,7 +63,7 @@ const mapViewToRoutesAndLinks = (routers, ParentPath = '') => ( _ => (
                     render={ps => <Comp {...ps} Routes={children && mapViewToRoutesAndLinks(children, path)}/>}/>
             )
         })}
-        {!!routers.length && <Redirect from={ParentPath} to={ParentPath + routers[0].path}/>}
+        {!!routers.length && <Redirect to='/home'/>}
     </Switch>
 ))
 

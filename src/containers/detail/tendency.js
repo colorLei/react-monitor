@@ -1,45 +1,36 @@
 import React , { Fragment } from 'react';
 import { connect } from 'react-redux'
-import { DETAIL } from 'constant/action-types'
 import BarChart from 'component/detail/bar-chart'
+import { detailMixins } from 'common/mixins'
+import { dfmt } from 'common/util'
 
-@connect(
-  state => ({
-    tendencyDetail: state.DETAIL.tendencyDetail
-  })
-)
+const HOUR = '1';
+@connect(state => state.DETAIL)
+@detailMixins(HOUR)
 export default class LeftMenu extends React.Component {
   constructor(props) {
     super(props)
   }
-  componentWillMount(){
-    this.getTendencyDetail()
-  }
-  getTendencyDetail(){
-    const {dispatch} = this.props
-    dispatch({
-      type: DETAIL.GET_TENDENCY_DETAIL.toString()
-    })
-  }
   render() {
-    const {tendencyDetail:{average,sevenAverage,arangeData}} = this.props
+    const {tendencyDetail:{weekData,nearlyMonth,days}} = this.props;
+    // console.log(this.props.tendencyDetail)
     return (
       <Fragment>
-        <BarChart/>
+        <BarChart tendencyDetail={this.props.tendencyDetail}/>
         <ul className='detail_average'>
           <li>
             <h3>近28日均量</h3>
-            <p>{average}</p>
+            <p>{nearlyMonth}</p>
           </li>
           <li>
-            <h3>近28日均量</h3>
-            <p>{sevenAverage}</p>
+            <h3>近7日均量</h3>
+            <p>{weekData}</p>
           </li>
           {
-            arangeData.map(({date,week,orderNumber}) =>(
+            days.map(({ticketdate,count}) =>(
               <li>
-                <h3>{date}{week}</h3>
-                <p>{orderNumber}</p>
+                <h3>{dfmt(ticketdate,'MM.DD ddd')}</h3>
+                <p>{count}</p>
               </li>
             ))
           }

@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import "echarts/lib/chart/line";
 import {renderChart, nfmt, numWithSpace, deepCopyObject} from 'common/util'
 import {AreaConf} from 'common/chartConf'
+import { selectAll, routerConf } from 'common/config'
 
 const AREA_COLOR = {
     "gn": "#a33d42",
@@ -41,14 +42,11 @@ export default class AreaChart extends Component {
                         <p>今日累计{levelTwo.name}({levelOne.name})</p>
                         <Link
                             to={{
-                            pathname: '/detail',
+                            pathname: `${routerConf.detail}${levelOne.code}/${levelTwo.code}/${selectAll.code}`,
                             state: {
                                 activeOne:levelOne,
                                 activeTwo:levelTwo,
-                                activeThree:{
-                                  code:'All',
-                                  name:'全部'
-                                }
+                                activeThree:selectAll
                             }
                         }}>{numWithSpace(levelTwo.value)}</Link>
                     </div>
@@ -57,7 +55,7 @@ export default class AreaChart extends Component {
                             <li>
                                 <label>{name}</label>
                                 <Link to={{
-                            pathname: '/detail',
+                            pathname: `${routerConf.detail}${levelOne.code}/${levelTwo.code}/${code}`,
                             state: {
                                 activeOne:levelOne,
                                 activeTwo:levelTwo,

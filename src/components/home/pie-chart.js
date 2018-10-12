@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import "echarts/lib/chart/pie";
 import { renderChart, nfmt, deepCopyObject} from 'common/util'
 import { pieConf } from 'common/chartConf'
+import { selectAll, routerConf } from 'common/config'
 
 export default class AreaChart extends Component{
   constructor(props) {
@@ -25,14 +26,11 @@ export default class AreaChart extends Component{
         <div className='pie_data'>
           <label>{category.name}创建总量</label>
           <Link to={{
-                            pathname: '/detail',
+                            pathname: `${routerConf.detail}${levelOne.code}/${category.code}/${selectAll.code}`,
                             state: {
                                 activeOne:levelOne,
                                 activeTwo:category,
-                                activeThree:{
-                                  code:'All',
-                                  name:'全部'
-                                }
+                                activeThree:selectAll
                             }
                     }}><span>{nfmt(category.value)}</span></Link>
         </div>

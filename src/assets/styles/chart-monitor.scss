@@ -101,9 +101,8 @@
         display: flex;
         font-size: 18px;
         label {
-          width: 120px
+          margin-right: 10px;
         }
-
         span {
           @include span_data_format;
         }

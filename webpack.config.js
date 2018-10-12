@@ -24,7 +24,8 @@ module.exports = merge(baseConfigs, {
     host: 'localhost',      // 默认是localhost
     port: 3000,             // 端口
     open: true,             // 自动打开浏览器
-    hot: true,               // 开启热更新
+    hot: true,              // 开启热更新
+    clientLogLevel:'none',  //不在控制台输出加载信息
     proxy: {
       '/workbench':{
         target: 'http://workbench.corp.qunar.com/',
@@ -35,7 +36,7 @@ module.exports = merge(baseConfigs, {
         },
       },
       '/amountskyruler':{
-        target: 'http://10.86.82.164:8080/',
+        target: 'http://10.86.82.144:8080/',
         changeOrigin: true,
         logLevel: 'debug',
         pathRewrite: {
