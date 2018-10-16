@@ -103,6 +103,9 @@
     }
     p{
       font-size: 14px;
+      &.current{
+        color: $color-blue-l
+      }
     }
   }
 }

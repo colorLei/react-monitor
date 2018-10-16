@@ -9,6 +9,25 @@ export const detailMixins = (hostryMark) => (target) => {
     componentDidMount() {
         this.init()
     },
+    componentWillUnmount(){
+      const { dispatch } = this.props;
+      dispatch({
+        type: DETAIL.SET_DETAIL_PAGE_ACTIVE.toString(),
+        hostryMark:true,
+        levelOne:[],
+        levelTwo:[],
+        levelThree:[],
+        activeOne:{},
+        activeTwo:{},
+        activeThree:{},
+        hoursList:[],
+        tendencyDetail:{
+          days:[]
+        },
+        hostryMark:true,
+        detailRoutesConf:[]
+      })
+    },
     init(){
         const { dispatch, match:{ params }} = this.props;
         dispatch({

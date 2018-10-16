@@ -9,26 +9,6 @@ export default class DETAILPAGE extends React.Component {
     constructor(props) {
         super(props)
     }
-    componentWillUnmount(){
-      console.log('uuuu')
-      const { dispatch } = this.props;
-      dispatch({
-        type: DETAIL.SET_DETAIL_PAGE_ACTIVE.toString(),
-        hostryMark:true,
-        levelOne:[],
-        levelTwo:[],
-        levelThree:[],
-        activeOne:{},
-        activeTwo:{},
-        activeThree:{},
-        hoursList:[],
-        tendencyDetail:{
-          days:[]
-        },
-        hostryMark:true,
-        detailRoutesConf:[]
-      })
-    }
     render() {
         const {Routes, activeOne, activeTwo, activeThree,hostryMark, detailRoutesConf} = this.props;
         return (

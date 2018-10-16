@@ -14,9 +14,7 @@ export default class BusinessBtn extends Component {
         this.state = {
           typeOne: {},
           typeTwo: {},
-          typeThree: {},
-          redirectConfirm:false,
-          redirectUrl:''
+          typeThree: {}
       }
     }
     componentDidMount(){
@@ -65,7 +63,7 @@ export default class BusinessBtn extends Component {
     }
     _operate = i => {
       const { typeOne, typeTwo, typeThree} = this.state,
-            { dispatch,hostryMark} = this.props,
+            { dispatch,hostryMark,history} = this.props,
             { length } = level;
       if(++i < length){
         this.setLevelList(i,this.state[`type${levelNumber[i-1]}`].code)
@@ -75,17 +73,12 @@ export default class BusinessBtn extends Component {
       }else{
         const [ { path } ] = DetailRoutes.filter( ({code}) => code === hostryMark);
         const redirectUrl = `${path}${typeOne.code}/${typeTwo.code}/${typeThree.code}`;
-        this.setState({
-          redirectConfirm:true,
-          redirectUrl
-        })
+        history.push(redirectUrl)
       }
     }
     render() {
-        const { redirectUrl,redirectConfirm } = this.state;
         return (
           <Fragment>
-            { redirectConfirm  && <Redirect to={ redirectUrl }/>}
             <div className='select_type'>
                 <label>数据类型：</label>
                 <ul>

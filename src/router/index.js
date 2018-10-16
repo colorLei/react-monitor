@@ -63,7 +63,7 @@ const mapViewToRoutesAndLinks = (routers, ParentPath = '') => ( _ => (
                     render={ps => <Comp {...ps} Routes={children && mapViewToRoutesAndLinks(children, path)}/>}/>
             )
         })}
-        {!!routers.length && <Redirect to='/home'/>}
+        {!!routers.length &&  <Redirect from={ParentPath} to={ParentPath + routers[0].path}/>}
     </Switch>
 ))
 
