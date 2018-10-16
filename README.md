@@ -42,7 +42,7 @@ yarn start
 
 ### 1. React Router v4
 
-    v4 的理念 router as component，理论上讲，整个工程的路由都要分散到各个 container 里，为了实现集中式路由配置，在 `view.js` 里做了一些转换：
+    v4 的理念 router as component，理论上讲，整个工程的路由都要分散到各个 container 里，为了实现集中式路由配置，在 `router/index.js` 里做了一些转换：
     ```js
         {
             path: '/list',
@@ -57,7 +57,7 @@ yarn start
             component: List // List 为 src/containers/List.js
         }
     ```
-    同时，在 render 的时候，会给 container 注入 `Routes`, `Links` 及 `raw`
+    同时，在 render 的时候，会给 container 注入 `Routes`
 
 ### 2. Redux & Saga
 
@@ -79,7 +79,7 @@ yarn start
     ```
     从而实现变量一个当三个用，而且还附带请求路径信息
 
-    在 Saga 模块 
+    在 Saga 模块，通过遍历生成默认 saga ，需特殊处理的可以使用 `sagaify` 自定义 saga
 
 ### 3. 按需加载
   按需加载的方法也不少，目前只尝试了第一种，因为我写Vue也是用import实现按需加载的，所以也就没去折腾了。
