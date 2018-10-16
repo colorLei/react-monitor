@@ -389,12 +389,8 @@ class Bingding extends React.Component {
 
 主要使用了ES6 `Decorator`装饰器
 ```
-<<<<<<< HEAD
   @connect()
   @detailMixins(id)
-=======
- detailMixins(id)
->>>>>>> 2f6d4a633959a39d45829dd47aaa9fc65b9efdf1
 
  export const detailMixins = (id) => (target) => {
    Object.assign(target.prototype,{
