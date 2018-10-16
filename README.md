@@ -84,7 +84,7 @@ yarn start
 ### 3. 按需加载
   按需加载的方法也不少，目前只尝试了第一种，因为我写Vue也是用import实现按需加载的，所以也就没去折腾了。
 
-#### 1. **import方法**
+#### 1. **import方法 hoc高阶组件**
 
 ```
 //asyncComponent.js
@@ -384,3 +384,18 @@ class Bingding extends React.Component {
 }
 ```
 就是通过 `onChange` 事件 来触发 `this.setState` 重新渲染 render 方法
+
+### 9. mixin
+
+主要使用了ES6 `Decorator`装饰器
+```
+ detailMixins(id)
+
+ export const detailMixins = (id) => (target) => {
+   Object.assign(target.prototype,{
+     componentDidMount() {
+        \\some function
+     }
+   }
+ }
+```
