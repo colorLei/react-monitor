@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux'
 import {HOME} from 'constant/action-types'
+import {default as cls} from 'classnames'
 
 const TIME_INTERVAL = 2000;
 @connect(state => ({exceptionList: state.HOME.exceptionList}))
@@ -79,6 +80,11 @@ export default class OpdrException extends Component {
             seconds = day.getSeconds()*1000;
       return day-minutes-seconds
     }
+    isPass({indexData,passLine},{code=1}={}){
+      return code===2?
+      parseFloat(indexData) > parseFloat(passLine):
+       parseFloat(indexData) < parseFloat(passLine);
+    }
     render() {
         const {exceptionList} = this.props;
         return (
@@ -86,8 +92,8 @@ export default class OpdrException extends Component {
                 <a href='http://workbench.corp.qunar.com/#/opdr/exceptionList' target='_blank'>OPDR数据异常 [{exceptionList.length}]</a>
                 <ul ref={el => this._getScrollConf(el)}>
                     {
-                      exceptionList.map(({businessGroup, indexName, indexData}) => (
-                        <li>{businessGroup.text}——{indexName}——{indexData.indexData}</li>
+                      exceptionList.map(({businessGroup, indexName, indexData,indexProperty}) => (
+                        <li>{businessGroup.text}——{indexName}—— <span className={cls({'text-red':this.isPass(indexData,indexProperty)})}>{indexData.indexData}</span></li>
                     ))}
                 </ul>
             </div>

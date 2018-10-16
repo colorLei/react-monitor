@@ -17,4 +17,6 @@ export { default as Row } from 'antd/lib/row';
 export { default as Slider } from 'antd/lib/slider';
 export { default as Table } from 'antd/lib/table'; */
 
+export { default as Icon } from 'antd/lib/icon';
 export { default as Select } from 'antd/lib/select';
+export { default as Spin } from 'antd/lib/spin';

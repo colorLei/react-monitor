@@ -23,18 +23,18 @@ export default class BusinessBtn extends Component {
       this._updateState()
       this.init()
     }
-    componentWillReceiveProps(nextProps){
-      for(let i=0;i<level.length;i++){
-        const active = `active${levelNumber[i]}`;
-        if(nextProps[active].code !== this.props[active].code){
-          this._updateState()
-          break;
-        }
-      }
-    }
     init(){
       levelNumber.forEach((v,i) => {
-        this.setLevelList(i,this.props[`active${levelNumber[i]}`].code)
+        const levelCode = i > 0? this.props[`active${levelNumber[i-1]}`].code : ''
+        this.setLevelList(i,levelCode)
+      })
+    }
+    _updateState(){
+      const { activeOne, activeTwo, activeThree} = this.props;
+      this.setState({
+        typeOne:{...activeOne},
+        typeTwo:{...activeTwo},
+        typeThree:{...activeThree},
       })
     }
     setLevelList = (i,showType) =>{
@@ -48,15 +48,6 @@ export default class BusinessBtn extends Component {
         method: 'post'
       })
     }
-    _updateState(){
-      const { activeOne, activeTwo, activeThree} = this.props;
-      this.setState({
-        typeOne:{...activeOne},
-        typeTwo:{...activeTwo},
-        typeThree:{...activeThree},
-      })
-    }
-
     handleChange = ({value,children}, i) =>{
       const stateData = {
         [`type${levelNumber[i]}`]:{
@@ -68,24 +59,20 @@ export default class BusinessBtn extends Component {
       while ( ++i < level.length){
         stateData[`type${levelNumber[i]}`] = {}
       }
-      this.setState(stateData,()=>{
-        this._operate(copyIndex)
-      })
       this.setState(stateData, _ => {
         this._operate(copyIndex)
       });
     }
     _operate = i => {
       const { typeOne, typeTwo, typeThree} = this.state,
-            { dispatch,hostryMark } = this.props,
+            { dispatch,hostryMark} = this.props,
             { length } = level;
       if(++i < length){
-        // this.setLevelList(i,this.state[`type${levelNumber[i]}`].code)
+        this.setLevelList(i,this.state[`type${levelNumber[i-1]}`].code)
         i === 1 && dispatch({
           type:DETAIL.CLEAR_LEVELTHREE_LIST.toString()
         })
       }else{
-        console.log(1)
         const [ { path } ] = DetailRoutes.filter( ({code}) => code === hostryMark);
         const redirectUrl = `${path}${typeOne.code}/${typeTwo.code}/${typeThree.code}`;
         this.setState({

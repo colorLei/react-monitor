@@ -13,10 +13,9 @@ export default class LeftMenu extends React.Component {
   }
   render() {
     const {tendencyDetail:{weekData,nearlyMonth,days}} = this.props;
-    // console.log(this.props.tendencyDetail)
     return (
       <Fragment>
-        <BarChart tendencyDetail={this.props.tendencyDetail}/>
+        {days.length>0 && <BarChart tendencyDetail={this.props.tendencyDetail}/>}
         <ul className='detail_average'>
           <li>
             <h3>近28日均量</h3>
@@ -29,7 +28,7 @@ export default class LeftMenu extends React.Component {
           {
             days.map(({ticketdate,count}) =>(
               <li>
-                <h3>{dfmt(ticketdate,'MM.DD ddd')}</h3>
+                <h3>{dfmt(ticketdate,'MM.DD')}</h3>
                 <p>{count}</p>
               </li>
             ))

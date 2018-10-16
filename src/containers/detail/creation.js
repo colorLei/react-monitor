@@ -15,7 +15,9 @@ export default class CREATION extends React.Component {
         const {hoursList} = this.props
         return (
             <Fragment>
-                <HourChart hoursList={hoursList}/>
+              <div style={{minHeight:'400px'}}>
+                {hoursList.length>0 && <HourChart hoursList={hoursList}/>}
+              </div>
                 <TimeInterval hoursList={hoursList}/>
             </Fragment>
         );

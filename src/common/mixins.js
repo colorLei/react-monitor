@@ -23,6 +23,7 @@ export const detailMixins = (hostryMark) => (target) => {
       })
     },
     getDetail({data:{levelOne,levelTwo,levelThree}})  {
+      console.log(this.props)
        const { dispatch,hostryMark } = this.props
         dispatch({
             type: DETAIL[actionType[hostryMark]].toString(),

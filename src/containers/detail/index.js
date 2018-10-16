@@ -3,11 +3,31 @@ import {connect} from 'react-redux'
 import {Redirect} from "react-router-dom";
 import SelectGroup from 'component/detail/select-group'
 import Selects from 'component/common/selects'
-
+import {DETAIL} from 'constant/action-types'
 @connect(state => state.DETAIL)
 export default class DETAILPAGE extends React.Component {
     constructor(props) {
         super(props)
+    }
+    componentWillUnmount(){
+      console.log('uuuu')
+      const { dispatch } = this.props;
+      dispatch({
+        type: DETAIL.SET_DETAIL_PAGE_ACTIVE.toString(),
+        hostryMark:true,
+        levelOne:[],
+        levelTwo:[],
+        levelThree:[],
+        activeOne:{},
+        activeTwo:{},
+        activeThree:{},
+        hoursList:[],
+        tendencyDetail:{
+          days:[]
+        },
+        hostryMark:true,
+        detailRoutesConf:[]
+      })
     }
     render() {
         const {Routes, activeOne, activeTwo, activeThree,hostryMark, detailRoutesConf} = this.props;
@@ -27,7 +47,7 @@ export default class DETAILPAGE extends React.Component {
                     {< Routes />
 }
                 </div>
-                {activeOne.code && <Selects {...this.props}/>
+                { activeOne.code && <Selects {...this.props}/>
 }
             </Fragment>
         );

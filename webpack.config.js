@@ -36,7 +36,7 @@ module.exports = merge(baseConfigs, {
         },
       },
       '/amountskyruler':{
-        target: 'http://10.86.82.144:8080/',
+        target: 'http://10.86.82.157:8080/',
         changeOrigin: true,
         logLevel: 'debug',
         pathRewrite: {

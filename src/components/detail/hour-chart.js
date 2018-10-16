@@ -14,9 +14,20 @@ export default class AreaChart extends Component{
   constructor(props) {
     super(props)
   }
-
   componentDidMount(){
-    renderChart(deepCopyObject(hourConf),'hour_chart','bar')
+    this._setChartOptions()
+  }
+  _setChartOptions = _ => {
+    const {  hoursList } = this.props;
+    const option = deepCopyObject(hourConf);
+    const { xAxis, series } = option ;
+    hoursList.forEach(({dateHour,todayData,weekData,yesterdayData}) =>{
+      xAxis.data.push(dateHour);
+      series[0].data.push(todayData);
+      series[1].data.push(yesterdayData);
+      series[2].data.push(weekData);
+    })
+    renderChart(option,'hour_chart','bar')
   }
   render(){
     return (

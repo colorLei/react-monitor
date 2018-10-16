@@ -1,313 +1,428 @@
 [
+{
+  "ret": true,
+  "data": [
   {
-    "ret": true,
-    "data":{
-      "line":[
-        {
-          "levelOne":{
-            "name":"国内",
-            "code":"gl"
-          },
-          "levelTwo":{
-            "name":"票量",
-            "accumuOrderNO":100861,
-            "code":"pl"
-          },
-          "levelThree":[
-            {
-              "name":"旗舰店",
-              "accumuOrderNO":88888,
-              "code":"xxx"
-            },
-            {
-              "name":"代购",
-              "accumuOrderNO":88888,
-              "code":"xxx"
-            },
-            {
-              "name":"自营",
-              "accumuOrderNO":88888,
-              "code":"xxx"
-            },
-            {
-              "name":"OTA",
-              "accumuOrderNO":88888,
-              "code":"xxx"
-            }
-          ],
-          "data":[
-            {
-              "name":"0:00",
-              "value":820
-            },
-            {
-              "name":"1:00",
-              "value":825
-            },
-            {
-              "name":"3:00",
-              "value":840
-            },
-            {
-              "name":"4:00",
-              "value":860
-            },
-            {
-              "name":"5:00",
-              "value":820
-            }
-          ]
-        },
-        {
-          "levelOne":{
-            "name":"国际",
-            "code":"gj"
-          },
-          "levelTwo":{
-            "name":"票量",
-            "accumuOrderNO":100861,
-            "code":"pl"
-          },
-          "levelThree":[
-            {
-              "name":"旗舰店",
-              "accumuOrderNO":88888,
-              "code":"xxx"
-            },
-            {
-              "name":"代购",
-              "accumuOrderNO":88888,
-              "code":"xxx"
-            },
-            {
-              "name":"自营",
-              "accumuOrderNO":88888,
-              "code":"xxx"
-            },
-            {
-              "name":"OTA",
-              "accumuOrderNO":88888,
-              "code":"xxx"
-            }
-          ],
-          "data":[
-            {
-              "name":"0:00",
-              "value":820
-            },
-            {
-              "name":"1:00",
-              "value":825
-            },
-            {
-              "name":"3:00",
-              "value":840
-            },
-            {
-              "name":"4:00",
-              "value":860
-            },
-            {
-              "name":"5:00",
-              "value":820
-            }
-          ]
-        }
-      ],
-      "bar":[
-        {
-          "levelOne":{
-            "name":"国内",
-            "code":"gl"
-          },
-          "name":["国内退票","国内改签"],
-          "levelTwo":[
-            {
-              "name":"国内订单总量",
-              "accumuOrderNO":20000,
-              "code":"xxx"
-            },
-            {
-              "name":"退改申请总量",
-              "accumuOrderNO":20000
-            },
-            {
-              "name":"改签申请总量",
-              "accumuOrderNO":2000
-            }
-          ],
-          "data":[
-            {
-              "name":"0:00",
-              "value1":820,
-              "value2":800
-            },
-            {
-              "name":"1:00",
-              "value1":825,
-              "value2":800
-            },
-            {
-              "name":"3:00",
-              "value1":840,
-              "value2":800
-            },
-            {
-              "name":"4:00",
-              "value1":860,
-              "value2":800
-            },
-            {
-              "name":"5:00",
-              "value1":820,
-              "value2":800
-            }
-          ]
-        },
-        {
-          "levelOne":{
-            "name":"国际",
-            "code":"gj"
-          },
-          "name":["国际退票","国际改签"],
-          "type":[
-            {
-              "name":"国际订单总量",
-              "accumuOrderNO":20000
-            },
-            {
-              "name":"退改申请总量",
-              "accumuOrderNO":20000
-            },
-            {
-              "name":"国际航段量",
-              "accumuOrderNO":20000
-            },
-            {
-              "name":"改签申请总量",
-              "accumuOrderNO":2000
-            }
-          ],
-          "data":[
-            {
-              "name":"0:00",
-              "value1":820,
-              "value2":800
-            },
-            {
-              "name":"1:00",
-              "value1":825,
-              "value2":800
-            },
-            {
-              "name":"3:00",
-              "value1":840,
-              "value2":800
-            },
-            {
-              "name":"4:00",
-              "value1":860,
-              "value2":800
-            },
-            {
-              "name":"5:00",
-              "value1":820,
-              "value2":800
-            }
-          ]
-        }
-      ],
-      "pie":[
-        {
-          "levelOne":{
-            "name":"国内",
-            "code":"gl"
-          },
-          "levelTwo":{
-            "name":"工单创建总量",
-            "code":"xxx",
-            "accumuOrderNO":20000
-          },
-          "levelThree":[
-            {
-              "name":"国际旗舰店",
-              "value":820
-            },
-            {
-              "name":"国内派单",
-              "value":825
-            },
-            {
-              "name":"国内旗舰店",
-              "value":840
-            },
-            {
-              "name":"国际派单",
-              "value":860
-            }
-          ]
-        },
-        {
-          "levelOne":{
-            "name":"国内",
-            "code":"gl"
-          },
-          "levelTwo":{
-            "name":"消息创建总量",
-            "code":"xxx",
-            "accumuOrderNO":20000
-          },
-          "levelThree":[
-            {
-              "name":"国际旗舰店",
-              "value":820
-            },
-            {
-              "name":"国内派单",
-              "value":825
-            },
-            {
-              "name":"国内旗舰店",
-              "value":840
-            },
-            {
-              "name":"国际派单",
-              "value":860
-            }
-          ]
-        },{
-          "levelOne":{
-            "name":"国内",
-            "code":"gl"
-          },
-          "levelTwo":{
-            "name":"众包创建总量",
-            "code":"xxx",
-            "accumuOrderNO":20000
-          },
-          "levelThree":[
-            {
-              "name":"国际旗舰店",
-              "value":820
-            },
-            {
-              "name":"国内派单",
-              "value":825
-            },
-            {
-              "name":"国内旗舰店",
-              "value":840
-            },
-            {
-              "name":"国际派单",
-              "value":860
-            }
-          ]
-        }
-      ]
+    "businessGroup":
+    {
+      "code": 69,
+      "text": "国际自营"
+    },
+    "indexName": "退票超时量（人工）",
+    "indexData":
+    {
+      "yesterday": "2018.10.14",
+      "fullValue": "",
+      "passLine": "5",
+      "targetValue": "",
+      "indexData": "0.0"
+    },
+    "planDate": "2018-10-15",
+    "closedTime": null,
+    "principal": "黄梦晰",
+    "indexType":
+    {
+      "code": 10,
+      "text": "C端服务水平-超时"
+    },
+    "taskCode": "A0771",
+    "createTime": "2018-10-15",
+    "taskSeverityLevel":
+    {
+      "code": 2,
+      "text": "T2"
+    },
+    "indexProperty":
+    {
+      "code": 2,
+      "text": "逆向"
+    },
+    "taskId": 441,
+    "taskStatus":
+    {
+      "code": 4,
+      "text": "审核中"
     }
-  }
-
-
-]
-
+  },
+  {
+    "businessGroup":
+    {
+      "code": 66,
+      "text": "国内自营组"
+    },
+    "indexName": "改签超时量",
+    "indexData":
+    {
+      "yesterday": "2018.10.14",
+      "fullValue": "",
+      "passLine": "100",
+      "targetValue": "",
+      "indexData": "72.0"
+    },
+    "planDate": "2018-10-15",
+    "closedTime": null,
+    "principal": "杨婵",
+    "indexType":
+    {
+      "code": 10,
+      "text": "C端服务水平-超时"
+    },
+    "taskCode": "A0732",
+    "createTime": "2018-10-15",
+    "taskSeverityLevel":
+    {
+      "code": 2,
+      "text": "T2"
+    },
+    "indexProperty":
+    {
+      "code": 2,
+      "text": "逆向"
+    },
+    "taskId": 444,
+    "taskStatus":
+    {
+      "code": 4,
+      "text": "审核中"
+    }
+  },
+  {
+    "businessGroup":
+    {
+      "code": 24,
+      "text": "分销产品运营"
+    },
+    "indexName": "接听率(new)",
+    "indexData":
+    {
+      "yesterday": "2018.10.14",
+      "fullValue": "",
+      "passLine": "90.0%",
+      "targetValue": "95.0%",
+      "indexData": "96.6%"
+    },
+    "planDate": "2018-10-15",
+    "closedTime": null,
+    "principal": "范艳艳",
+    "indexType":
+    {
+      "code": 3,
+      "text": "C端服务水平-响应"
+    },
+    "taskCode": "A0344",
+    "createTime": "2018-10-15",
+    "taskSeverityLevel":
+    {
+      "code": 2,
+      "text": "T2"
+    },
+    "indexProperty":
+    {
+      "code": 1,
+      "text": "正向"
+    },
+    "taskId": 447,
+    "taskStatus":
+    {
+      "code": 4,
+      "text": "审核中"
+    }
+  },
+  {
+    "businessGroup":
+    {
+      "code": 24,
+      "text": "分销产品运营"
+    },
+    "indexName": "工单响应时长（min）",
+    "indexData":
+    {
+      "yesterday": "2018.10.14",
+      "fullValue": "",
+      "passLine": "15.0",
+      "targetValue": "",
+      "indexData": "4.4"
+    },
+    "planDate": "2018-10-15",
+    "closedTime": null,
+    "principal": "范艳艳",
+    "indexType":
+    {
+      "code": 3,
+      "text": "C端服务水平-响应"
+    },
+    "taskCode": "A0702",
+    "createTime": "2018-10-15",
+    "taskSeverityLevel":
+    {
+      "code": 2,
+      "text": "T2"
+    },
+    "indexProperty":
+    {
+      "code": 2,
+      "text": "逆向"
+    },
+    "taskId": 450,
+    "taskStatus":
+    {
+      "code": 4,
+      "text": "审核中"
+    }
+  },
+  {
+    "businessGroup":
+    {
+      "code": 42,
+      "text": "国内出退改组"
+    },
+    "indexName": "规定时间内改签完成率（代购不付费改签）",
+    "indexData":
+    {
+      "yesterday": "2018.10.14",
+      "fullValue": "99%",
+      "passLine": "95%",
+      "targetValue": "97%",
+      "indexData": "94.4%"
+    },
+    "planDate": "2018-08-31",
+    "closedTime": "2018-09-02",
+    "principal": "苏欢",
+    "indexType":
+    {
+      "code": 1,
+      "text": "C端服务水平-效率"
+    },
+    "taskCode": "A0071",
+    "createTime": "2018-07-30",
+    "taskSeverityLevel":
+    {
+      "code": 2,
+      "text": "T2"
+    },
+    "indexProperty":
+    {
+      "code": 1,
+      "text": "正向"
+    },
+    "taskId": 3,
+    "taskStatus":
+    {
+      "code": 6,
+      "text": "已完成"
+    }
+  },
+  {
+    "businessGroup":
+    {
+      "code": 33,
+      "text": "国内旗舰店"
+    },
+    "indexName": "规定时间内改签完成率（tts接口非自愿）",
+    "indexData":
+    {
+      "yesterday": "2018.10.14",
+      "fullValue": "100%",
+      "passLine": "92%",
+      "targetValue": "96%",
+      "indexData": "97.4%"
+    },
+    "planDate": "2018-08-14",
+    "closedTime": "2018-08-17",
+    "principal": "陈娟",
+    "indexType":
+    {
+      "code": 1,
+      "text": "C端服务水平-效率"
+    },
+    "taskCode": "A0032",
+    "createTime": "2018-08-09",
+    "taskSeverityLevel":
+    {
+      "code": 2,
+      "text": "T2"
+    },
+    "indexProperty":
+    {
+      "code": 1,
+      "text": "正向"
+    },
+    "taskId": 18,
+    "taskStatus":
+    {
+      "code": 6,
+      "text": "已完成"
+    }
+  },
+  {
+    "businessGroup":
+    {
+      "code": 33,
+      "text": "国内旗舰店"
+    },
+    "indexName": "规定时间内改签完成率（tts接口非自愿）",
+    "indexData":
+    {
+      "yesterday": "2018.10.14",
+      "fullValue": "100%",
+      "passLine": "92%",
+      "targetValue": "96%",
+      "indexData": "97.4%"
+    },
+    "planDate": "2018-08-30",
+    "closedTime": "2018-09-02",
+    "principal": "陈娟",
+    "indexType":
+    {
+      "code": 1,
+      "text": "C端服务水平-效率"
+    },
+    "taskCode": "A0033",
+    "createTime": "2018-08-18",
+    "taskSeverityLevel":
+    {
+      "code": 2,
+      "text": "T2"
+    },
+    "indexProperty":
+    {
+      "code": 1,
+      "text": "正向"
+    },
+    "taskId": 24,
+    "taskStatus":
+    {
+      "code": 6,
+      "text": "已完成"
+    }
+  },
+  {
+    "businessGroup":
+    {
+      "code": 54,
+      "text": "国际出改"
+    },
+    "indexName": "规定时间内改签完成率（自愿）",
+    "indexData":
+    {
+      "yesterday": "2018.10.14",
+      "fullValue": "",
+      "passLine": "90%",
+      "targetValue": "95%",
+      "indexData": "93.5%"
+    },
+    "planDate": "2018-08-30",
+    "closedTime": "2018-09-02",
+    "principal": "彭聪",
+    "indexType":
+    {
+      "code": 1,
+      "text": "C端服务水平-效率"
+    },
+    "taskCode": "A0111",
+    "createTime": "2018-08-24",
+    "taskSeverityLevel":
+    {
+      "code": 2,
+      "text": "T2"
+    },
+    "indexProperty":
+    {
+      "code": 1,
+      "text": "正向"
+    },
+    "taskId": 36,
+    "taskStatus":
+    {
+      "code": 6,
+      "text": "已完成"
+    }
+  },
+  {
+    "businessGroup":
+    {
+      "code": 54,
+      "text": "国际出改"
+    },
+    "indexName": "平均改签时长（h）（非自愿）",
+    "indexData":
+    {
+      "yesterday": "2018.10.14",
+      "fullValue": "",
+      "passLine": "24",
+      "targetValue": "12",
+      "indexData": "1.5"
+    },
+    "planDate": "2018-08-30",
+    "closedTime": "2018-09-02",
+    "principal": "彭聪",
+    "indexType":
+    {
+      "code": 2,
+      "text": "C端服务水平-时长"
+    },
+    "taskCode": "A0141",
+    "createTime": "2018-08-24",
+    "taskSeverityLevel":
+    {
+      "code": 2,
+      "text": "T2"
+    },
+    "indexProperty":
+    {
+      "code": 2,
+      "text": "逆向"
+    },
+    "taskId": 39,
+    "taskStatus":
+    {
+      "code": 6,
+      "text": "已完成"
+    }
+  },
+  {
+    "businessGroup":
+    {
+      "code": 39,
+      "text": "国际官网代购"
+    },
+    "indexName": "平均改签完成时长（h）",
+    "indexData":
+    {
+      "yesterday": "2018.10.14",
+      "fullValue": "",
+      "passLine": "8",
+      "targetValue": "6.4",
+      "indexData": "1.0"
+    },
+    "planDate": "2018-08-30",
+    "closedTime": "2018-09-02",
+    "principal": "姜子昂",
+    "indexType":
+    {
+      "code": 2,
+      "text": "C端服务水平-时长"
+    },
+    "taskCode": "A0271",
+    "createTime": "2018-08-24",
+    "taskSeverityLevel":
+    {
+      "code": 2,
+      "text": "T2"
+    },
+    "indexProperty":
+    {
+      "code": 2,
+      "text": "逆向"
+    },
+    "taskId": 42,
+    "taskStatus":
+    {
+      "code": 6,
+      "text": "已完成"
+    }
+  }],
+  "error": null,
+  "currentPage": 2,
+  "total": 84
+}]

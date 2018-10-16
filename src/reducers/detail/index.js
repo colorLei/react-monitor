@@ -39,6 +39,9 @@ export default handleActions({
               activeOne:levelOne,
               activeTwo:levelTwo,
               activeThree:levelThree,
+              typeOne: levelOne,
+              typeTwo: levelTwo,
+              typeThree: levelThree,
               detailRoutesConf
           }
   },

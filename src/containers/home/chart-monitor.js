@@ -4,6 +4,7 @@ import {HOME} from 'constant/action-types'
 import AreaChart from 'component/home/area-chart'
 import BarChart from 'component/home/bar-chart'
 import PieChart from 'component/home/pie-chart'
+import {Spin} from 'common/my_antd'
 
 const MS = 60*1000;
 @connect(
@@ -34,7 +35,7 @@ export default class ChartMonitor extends React.Component {
   render() {
     const  { line, bar, pie }= this.props
     return (
-      <Fragment>
+      <Spin size="large" tip="数据正在加载中..." spinning={line.length===0}>
         <div className='chart-line'>
             <div className='left-line'>
               {
@@ -58,7 +59,7 @@ export default class ChartMonitor extends React.Component {
             ))
           }
         </div>
-      </Fragment>
+      </Spin>
     );
   }
 }
