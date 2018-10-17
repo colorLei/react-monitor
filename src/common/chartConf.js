@@ -30,27 +30,39 @@ export const barConf = {
             color: '#fff'
         }
     },
+    tooltip: {
+      trigger: 'axis',
+      axisPointer: {
+          type: 'shadow'
+      }
+    },
     grid: {},
     xAxis: {
-        data: []
+        data: [],
     },
-    yAxis: {
-        show: false
+    yAxis:{
+      splitLine: {
+                                    show: false,
+                                    //  改变轴线颜色
+                                    lineStyle: {
+                                        // 使用深浅的间隔色
+                                        color: ['red']
+                                    }                            
+                            }
     },
     series: [
         {
             barWidth: 7,
             data: [],
-            label: labelNormal
         }, {
             barWidth: 7,
             data: [],
-            label: labelNormal
         }
     ]
 };
 
 export const pieConf = {
+    color:['#00a0e0','#82cbae','#948c4b','#d49d00','#ce4543'],
     series: [
         {
             type: 'pie',

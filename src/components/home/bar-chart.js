@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import "echarts/lib/chart/bar";
 import 'echarts/lib/component/legend';
+import 'echarts/lib/component/tooltip';
 import { renderChart, nfmt, deepCopyObject} from 'common/util'
 import { barConf } from 'common/chartConf'
 import { selectAll, routerConf } from 'common/config'

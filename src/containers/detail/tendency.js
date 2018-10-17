@@ -16,7 +16,9 @@ export default class LeftMenu extends React.Component {
     const {tendencyDetail:{weekData,nearlyMonth,days}} = this.props;
     return (
       <Fragment>
-        {days.length>0 && <BarChart tendencyDetail={this.props.tendencyDetail}/>}
+        <div style={{minHeight:'550px'}}>
+          {days.length>0 && <BarChart tendencyDetail={this.props.tendencyDetail}/>}
+        </div>
         <ul className='detail_average'>
           <li>
             <h3>近28日均量</h3>

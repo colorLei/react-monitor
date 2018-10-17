@@ -32,7 +32,7 @@ export default class AreaChart extends Component{
   render(){
     return (
         <div className='detail_bar_chart'>
-          <div className='bar_chart_type' id='hour_chart'></div>
+          <div className='hour_chart_type' id='hour_chart'></div>
           <BarRemark {...POINT_COLOR}/>
         </div>
     );

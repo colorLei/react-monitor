@@ -24,6 +24,7 @@
           font-size: 32px;
         }
         color: #00ffff;
+        font-weight: bold;
         &:hover{
          @include hover_color;
         }
@@ -32,11 +33,12 @@
         font-size: 18px;
         margin: 12px 0;
         width: 220px;
+        font-weight: bold
       }
     }
     .opdr_containar{
       width: 80%;
-      margin: 10px auto;
+      margin: 15px auto 20px;
       border-top: 1px solid #fff;
       border-bottom: 1px solid #fff;
       a{
@@ -44,13 +46,14 @@
         font-weight: bold;
         padding-top: 10px;
         display: block;
+        font-weight: bold;
         &:hover{
           @include hover_color;
         }
       }
       ul{
         margin: 10px 0;
-        height: 72px;
+        height: 144px;
         overflow-x: hidden;
         overflow-y: auto;
         // animation: maxHeightTranstion 2s linear;
@@ -80,7 +83,7 @@
       width: 80%;
       margin:auto;
       display: flex;
-      padding-left: 4%;
+      padding-left: 6%;
       >div{
         width: 33%;
         button{
@@ -105,7 +108,7 @@
       display: flex;
       justify-content: space-around;
       .business_leader{
-        margin-bottom: 60px;
+        margin-bottom: 75px;
       }
       .btn_no{
         position: relative;

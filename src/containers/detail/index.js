@@ -22,7 +22,7 @@ export default class DETAILPAGE extends React.Component {
                     <SelectGroup routes = {detailRoutesConf}/>
                 </div>
                 <div style={{
-                    minHeight: '400px'
+                    minHeight: '500px'
                 }}>
                     {< Routes />
 }

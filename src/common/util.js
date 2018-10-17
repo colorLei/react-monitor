@@ -32,7 +32,8 @@ export const renderChart = (dataSource = {}, htmlDom, type) => {
         series,
         legend,
         grid,
-        color
+        color,
+        tooltip
     } = dataSource;
     if (myChart) {
         if (dataSource) {
@@ -44,6 +45,7 @@ export const renderChart = (dataSource = {}, htmlDom, type) => {
                         color: '#fff'
                     },
                     legend,
+                    tooltip,
                     grid: grid && {
                         left: '3%',
                         right: '4%',

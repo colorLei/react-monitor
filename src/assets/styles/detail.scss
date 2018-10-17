@@ -49,8 +49,12 @@
 .detail_bar_chart{
   display: flex;
   border-bottom: 1px solid #fff;
+  .hour_chart_type{
+    height: 500px;
+    width: 80%;
+  }
   .bar_chart_type{
-    height: 400px;
+    height: 570px;
     width: 80%;
   }
   .bar_remark{
