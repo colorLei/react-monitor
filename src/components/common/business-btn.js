@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import  { Link }  from  'react-router-dom';
+import {default as cls} from 'classnames'
 
 const letters = ['A','B','J','K']
 const groupLen = 5;
@@ -34,7 +35,10 @@ export default class BusinessBtn extends Component{
       );
     }
     return (
-      <div className={`btn_${letters[index]}`}>
+      <div className={cls(`btn_${letters[index]}`,{
+        'btn_left':index===1,
+        'btn_right':index===2,
+        })}>
         <div className='business_leader'>
           <p className='business_leader_p'>{letters[index]}</p>
           <BtnNo text={leader} leader={true} exception={exception}/>

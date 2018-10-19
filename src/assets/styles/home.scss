@@ -107,6 +107,16 @@
       padding: 30px 30px 20px;
       display: flex;
       justify-content: space-around;
+      @media (min-width: 1600px) {
+        .btn_left{
+          position: relative;
+          right: 3%;
+        }
+        .btn_right{
+          position: relative;
+          left: 3%;
+        }
+      }
       .business_leader{
         margin-bottom: 75px;
       }

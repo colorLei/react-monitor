@@ -6,6 +6,12 @@ const labelNormal = {
 };
 
 export const AreaConf = {
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+        type: 'shadow'
+    }
+  },
     xAxis: {
         data: []
     },
@@ -42,13 +48,8 @@ export const barConf = {
     },
     yAxis:{
       splitLine: {
-                                    show: false,
-                                    //  改变轴线颜色
-                                    lineStyle: {
-                                        // 使用深浅的间隔色
-                                        color: ['red']
-                                    }                            
-                            }
+        show: false
+      }
     },
     series: [
         {

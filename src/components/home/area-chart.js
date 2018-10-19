@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import "echarts/lib/chart/line";
+import 'echarts/lib/component/tooltip';
 import {renderChart, nfmt, numWithSpace, deepCopyObject} from 'common/util'
 import {AreaConf} from 'common/chartConf'
 import { selectAll, routerConf } from 'common/config'

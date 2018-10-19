@@ -7,7 +7,7 @@ import NowTime from 'component/home/now-time'
 const site_btn = [
     {
         className: 'color-blue',
-        text: '在选座位'
+        text: '已选座位'
     }, {
         className: 'color-red',
         text: '异常座位'
