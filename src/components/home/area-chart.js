@@ -19,6 +19,9 @@ export default class AreaChart extends Component {
     componentDidMount() {
         this._setChartOptions()
     }
+    componentWillReceiveProps(){
+      this._setChartOptions()
+    }
     _setChartOptions = _ => {
         const {id, data, levelOne: {code}} = this.props;
         const option = data.reduce((init, {name, value}) => {

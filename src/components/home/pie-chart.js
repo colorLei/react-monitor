@@ -13,6 +13,9 @@ export default class AreaChart extends Component{
   componentDidMount(){
     this._setChartOptions()
   }
+  componentWillReceiveProps(){
+    this._setChartOptions()
+  }
   _setChartOptions = _ => {
     const { id, data } = this.props;
     const option = deepCopyObject(pieConf);

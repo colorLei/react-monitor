@@ -18,7 +18,7 @@ export default class OpdrException extends Component {
         dispatch({
             type: HOME.GET_EXCEPTION_LIST.toString(),
             data: {
-                flag: 0
+                flag: 3
             },
             method: 'post'
         })
