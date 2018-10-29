@@ -96,14 +96,14 @@ export const hourConf = {
             type: 'line',
             data: [],
             lineStyle: {
-                color: '#84c816'
+                color: '#d5362e'
             }
         }, {
             name: '前7日均量',
             type: 'line',
             data: [],
             lineStyle: {
-                color: '#d5362e'
+                color: '#84c816'
             }
         }
     ]

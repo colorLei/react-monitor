@@ -24,7 +24,7 @@ export default class BusinessBtn extends Component {
     init(){
       levelNumber.forEach((v,i) => {
         const levelCode = i > 0? this.props[`active${levelNumber[i-1]}`].code : ''
-        this.setLevelList(i,levelCode)
+        this.setLevelList(i,levelCode,this.props.activeOne.code)
       })
     }
     _updateState(){
@@ -35,13 +35,14 @@ export default class BusinessBtn extends Component {
         typeThree:{...activeThree},
       })
     }
-    setLevelList = (i,showType) =>{
+    setLevelList = (i,showType,primaryType) =>{
       const { dispatch } = this.props
       dispatch({
         type: DETAIL[`GET_LEVEL${levelPathNumber[i]}_LIST`].toString(),
         data: {
           mark: i+1,
-          showType
+          showType,
+          primaryType
         },
         method: 'post'
       })
@@ -66,7 +67,7 @@ export default class BusinessBtn extends Component {
             { dispatch,hostryMark,history} = this.props,
             { length } = level;
       if(++i < length){
-        this.setLevelList(i,this.state[`type${levelNumber[i-1]}`].code)
+        this.setLevelList(i,this.state[`type${levelNumber[i-1]}`].code,typeOne.code)
         i === 1 && dispatch({
           type:DETAIL.CLEAR_LEVELTHREE_LIST.toString()
         })

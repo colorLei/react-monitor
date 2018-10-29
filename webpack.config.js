@@ -36,7 +36,7 @@ module.exports = merge(baseConfigs, {
         },
       },
       '/amountskyruler':{
-        target: 'http://10.86.82.186:8080/',
+        target: 'http://workbench.corp.qunar.com/',
         changeOrigin: true,
         logLevel: 'debug',
         pathRewrite: {
