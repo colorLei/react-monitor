@@ -22,7 +22,7 @@ export default class LeftMenu extends React.Component {
         return (
             <div className='home_left'>
                 <div className='content_top'>
-                    <NavLink to='/home' className='title'>武汉运营中心数据监控大屏</NavLink>
+                    <NavLink to='/home' className='title'>Qunar运营中心监控大屏</NavLink>
                     <NowTime/>
                     <p>当前在班人力：666</p>
                 </div>
